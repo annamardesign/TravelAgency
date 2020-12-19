@@ -1,0 +1,47 @@
+.page {
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ z-index: 0;
+ box-sizing: border-box;
+ padding: 0%;
+ top: 0vw;
+ left: 0;
+ display: flex;
+ flex-wrap: wrap;
+ flex-direction: column;
+ justify-content: flex-start;
+}
+.sky {
+position: absolute;
+top: 5vw;
+left: -10vw;
+flex: auto;
+z-index: 11;
+}
+
+.mountain {
+ position: absolute;
+ top: 10vw;
+ left: 0;
+ flex: auto;
+ z-index: 11;
+}
+
+.water {
+ position: absolute;
+ top: -5vw;
+ left: 0;
+ flex: auto;
+ z-index: 12;
+}
+
+.find {
+ position: absolute;
+ bottom: 20vw;
+ left: 35vw;
+ flex: auto;
+ z-index: 13;
+ color: #ffffff;
+ text-transform: uppercase;
+}

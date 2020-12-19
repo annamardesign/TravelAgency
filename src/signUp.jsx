@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-const Contact = () => {
+const SignUp = () => {
     return ( <div>Contact</div> );
 }
  
-export default Contact;
+export default SignUp;

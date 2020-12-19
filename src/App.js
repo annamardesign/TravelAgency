@@ -5,7 +5,7 @@ import NavBar from "./navbar";
 import Logo from "./logo";
 import Home from "./home";
 import Explore from "./explore";
-import Contact from "./contact";
+import SignUp from "./signUp";
 import SignIn from "./signin";
 import './App.css';
 
@@ -20,7 +20,7 @@ function App() {
       <Route path="/logo"><Logo/></Route> 
       <Route path="/home"><Home/></Route>
       <Route path="/explore"><Explore/></Route>
-      <Route path="/contact"><Contact/></Route>
+      <Route path="/signup"><SignUp/></Route>
       <Route path="/signin"><SignIn/></Route>
       <Redirect from="/" exact to ="/home"/>
       <Redirect from="/logo" exact to ="/home"/>
