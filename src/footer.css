@@ -1,0 +1,36 @@
+.footer {
+ display: flex;
+ position: fixed;
+ bottom: 0;
+ left: 0;
+ width: 100%;
+ height: 4vw;
+ z-index: 1;
+ padding: 0.75rem 2rem;
+ background: #0E988A;
+ justify-content: space-between;
+ align-items: center;
+ overflow: hidden;
+    
+}
+
+.footer ul {
+ list-style: none;
+ text-align: left;
+ color: #ffffff;
+ text-decoration: none;
+ font-size: 1.2vw;
+}
+
+.footer ul li{
+ display: block;
+ margin-right: 3rem;
+ margin-top: 1rem;
+ color: #ffffff;
+}
+
+.social {
+ margin-right: 3rem;
+ color: #ffffff;
+ font-size: 1.8vw;
+}

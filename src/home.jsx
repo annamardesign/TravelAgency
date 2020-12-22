@@ -40,7 +40,7 @@ const Home = () => {
         <div className="grid-wrap">
           {offersData.map( offer => 
             (<div className="card">
-              <img src={offer.image}  alt={offer.description} className="offer"/> 
+              <img src={offer.image}  alt={offer.description} className="offer-img"/> 
               <h5 className="price">{offer.price}</h5>
               <p className="desc">{offer.description}</p>
               <a href={offer.url} className="btn-see">See itinerary</a>
