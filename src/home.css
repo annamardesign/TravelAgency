@@ -11,6 +11,7 @@
  flex-wrap: wrap;
  flex-direction: column;
  justify-content: flex-start;
+ overflow-x: none;
 }
 .sky {
 position: absolute;
@@ -44,4 +45,96 @@ z-index: 11;
  z-index: 13;
  color: #ffffff;
  text-transform: uppercase;
+ font-size: 1vw;
+}
+
+.find-arrow {
+ position: absolute;
+ left: 15vw;
+ font-size: 4vw;
+}
+
+.chamonie {
+ position: absolute;
+ left: -10vw;
+ top: 80vw;
+ font-size: 2vw;
+ z-index: 16;
+ font-size: 2vw;
+ color: #ffffff;
+}
+
+.top {
+ position: absolute;
+ left: 40rem;
+ top: 90vw;
+ height: 40vw;
+ padding-bottom: 8rem;
+ width: 100%;
+ font-size: 2vw;
+ z-index: 17;
+ font-size: 7vw;
+ text-align: center;
+ color: #ffffff; 
+}
+
+.grid-wrap {
+ position: relative;
+ top: 85vw;
+ left: 0;
+ padding-top: 8rem;
+ display: grid;
+ height: 65vw;
+ grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+ grid-column-gap: 2rem;
+ grid-row-gap: 1rem;
+ background-color:#c1c5c4;
+ align-items: center;
+}
+
+.card {
+ width: 20vw;
+ height: 30vw;
+ margin: 0 auto 3rem auto;
+ border-radius: 1rem;
+ text-align: center;
+ background-color: #000000;
+}
+
+.desc {
+ margin-top: 10rem;
+ padding: 1rem;
+ font-size: 3vw;
+ color:#ffffff;
+ text-align: center;
+ text-transform: uppercase;
+}
+
+.price {
+ margin-top: 1rem;
+ padding: 1rem;
+ font-size: 1vw;
+ color:#0E988A;
+ text-align: center;
+}
+
+.btn-see {
+ border-radius: 5px;
+ color: #ffffff;
+ background-color:#0E988A;
+ font-size: 1vw; 
+ margin: 20% auto;
+ cursor: pointer;
+ padding: 1rem;
+ text-decoration: none;
+}
+
+.btn-see:active {
+ background-color:#39756f;
+ text-decoration: underline; 
+}
+.offer-img {
+ width: 40px;
+ height: 40px;
+ z-index: 100;
 }
