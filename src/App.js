@@ -6,7 +6,7 @@ import Footer from "./footer";
 import Logo from "./logo";
 import Home from "./home";
 import Explore from "./explore";
-import SignUp from "./signUp";
+import SignUp from "./signup";
 import SignIn from "./signin";
 import './App.css';
 
