@@ -1,0 +1,38 @@
+.destinations {
+    padding: 8rem calc((100vw - 1100px)/2);
+}
+.destinations-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(auto, 350px);
+}
+.destionation-card {
+    margin: 1rem;
+    border-radius: 10px;
+    position: relative;
+}
+
+.destionation-card p {
+    position: absolute;
+    bottom: 30px;
+    color:#ffffff;
+    left: 25px;
+    font-size: 3rem;
+}
+.destination-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.text {
+    padding: 1rem;
+}
+.text h1 {
+    margin-bottom: 1rem;
+    font-size: 1vw;
+}
+.services {
+    line-height: 1.4;
+    font-size: 1vw;
+}
