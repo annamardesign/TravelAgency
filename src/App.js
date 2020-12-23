@@ -2,7 +2,6 @@ import React from 'react';
 import {Route, Redirect, Switch} from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import NavBar from "./navbar";
-import Footer from "./footer";
 import Logo from "./logo";
 import Home from "./home";
 import Explore from "./explore";
@@ -27,7 +26,6 @@ function App() {
       <Redirect from="/logo" exact to ="/home"/>
       <Redirect to="/not-found"/>
       </Switch>
-      <Footer/>
       </Router>
     </React.Fragment>
   );
