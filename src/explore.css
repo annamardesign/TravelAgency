@@ -1,5 +1,11 @@
+.body {
+    margin: 0;
+    padding: 0;
+    background: #c1c5c4;
+}
+
 .destinations {
-    padding: 8rem calc((100vw - 1100px)/2);
+    padding: 12rem calc((100vw - 1100px)/2);
     background: #c1c5c4;
 }
 
@@ -8,7 +14,9 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(auto, 350px);
     grid-gap: 1rem;
+    background: #c1c5c4;
 }
+
 
 .topline {
     color: #0E988A;
