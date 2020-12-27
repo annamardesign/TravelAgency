@@ -17,6 +17,7 @@
 right: 0;
 margin-right: 6rem;
 }
+
 .center {
 padding: 0;
 margin: 0 auto;
@@ -102,9 +103,16 @@ padding: 0;
     overflow: hidden;
     width: 76vw;
     height: 76vw;
-    top:-1rem;
+    top:-2rem;
     right: -4rem;
     z-index:100;
+    opacity: 0;
+    animation: 1s appear forwards
+  }
+
+  .nav-menu-active li {
+    transition: 0.2s ease-in-out;
+    animation: 0.5s slideIn forwards;
   }
 
   .center {
@@ -129,8 +137,28 @@ padding: 0;
    .navbar a:active {
     color:#ffffff;
    }
-  
+
+   @keyframes appear {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideIn {
+    0% {
+      transform: translateX(-180%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
 }
+  
+
 
 
 
