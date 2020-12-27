@@ -6,7 +6,9 @@ import heritage from './images/heritage.jpg';
 import './explore.css';
 
 const Explore = () => {
-    return (<React.Fragment>
+ 
+ 
+ return (<React.Fragment>
      
 <div className="destinations">
     <div className="destinations-wrapper">

@@ -31,7 +31,7 @@ z-index: 11;
 
 .water {
  position: absolute;
- top: -5vw;
+ top: -9vw;
  left: 0;
  flex: auto;
  z-index: 12;
@@ -67,7 +67,7 @@ z-index: 11;
 .top {
  position: absolute;
  left: 40rem;
- top: 90vw;
+ top: 110vw;
  height: 40vw;
  padding-bottom: 8rem;
  width: 100%;
@@ -80,9 +80,10 @@ z-index: 11;
 
 .grid-wrap {
  position: relative;
- top: 85vw;
+ top: 110vw;
  left: 0;
- padding-top: 8rem;
+ padding-top: 18rem;
+ padding-bottom: 2rem;
  display: grid;
  height: 65vw;
  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
@@ -101,8 +102,10 @@ z-index: 11;
  background-color: #000000;
 }
 
+
+
 .desc {
- margin-top: 10rem;
+ margin-top: 5rem;
  padding: 1rem;
  font-size: 3vw;
  color:#ffffff;
@@ -138,4 +141,9 @@ z-index: 11;
  width: 40px;
  height: 40px;
  z-index: 100;
+}
+
+
+@media screen and (max-width: 768px) {
+    
 }

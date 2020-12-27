@@ -26,6 +26,7 @@
     margin: 1rem;
     border-radius: 10px;
     position: relative;
+
 }
 
 .destination-card-p {
@@ -54,8 +55,8 @@
 }
 
 .services {
-    line-height: 1.4;
-    font-size: 1vw;
+    line-height: 1.6;
+    font-size: 1.5vw;
 }
 
 .text:nth-child(1) {
@@ -87,6 +88,8 @@
     grid-row: 4/6;
     grid-column: 2/3;
 }
+
+
 
 @media screen and (max-width: 768px) {
     .destinations-wrapper {
@@ -129,6 +132,12 @@
     }
     .text-h1 {
         font-size: 4vw;
+    }
+    .destination-card-p {
+        position: relative;
+        top: 10.5rem;
+        left: 1.5rem;
+        font-size: 3rem;
     }
     
 }

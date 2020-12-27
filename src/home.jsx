@@ -15,7 +15,9 @@ const Home = () => {
     function handleScroll() {
       setOffset(window.pageYOffset)
     }
-    window.addEventListener("scroll", handleScroll)
+   
+    
+    window.addEventListener("scroll",handleScroll );
 
     function loadData() {
       setOffers(offersData);

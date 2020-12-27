@@ -1,4 +1,4 @@
-.navbar {
+.nav-menu {
  display: flex;
  position: fixed;
  top: 0;
@@ -55,6 +55,81 @@ padding: 0;
 
 .navbar a:active {
  color:#0E988A;
+}
+
+.menu-icon {
+ display: none;
+}
+
+.mobile-container {
+ display: none;
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+ .mobile-container {
+  justify-self: start;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  background-color:#c1c5c4;
+ }
+
+ .menu-icon {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(-100%, 60%);
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #ffffff;
+  z-index: 199;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  .nav-menu-active {
+    border-radius: 50%;
+    background:#0E988A;
+    position: absolute;
+    overflow: hidden;
+    width: 76vw;
+    height: 76vw;
+    top:-1rem;
+    right: -4rem;
+    z-index:100;
+  }
+
+  .center {
+    display: none;
+  }
+
+  .left {
+    right: 0;
+    margin-right: 5rem;
+    margin-top: 5rem;
+   }
+
+  .right {
+    margin-right: 5rem;
+    margin-top: 0rem;
+  }
+
+  .navbar a:hover {
+    color:#ffffff;
+   }
+   
+   .navbar a:active {
+    color:#ffffff;
+   }
+  
 }
 
 
