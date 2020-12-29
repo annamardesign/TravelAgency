@@ -12,6 +12,7 @@
  flex-direction: column;
  justify-content: flex-start;
  overflow-x: none;
+ background-color:#c1c5c4;
 }
 .sky {
 position: absolute;
@@ -67,9 +68,8 @@ z-index: 11;
 .top {
  position: absolute;
  left: 40rem;
- top: 110vw;
+ top: 90vw;
  height: 40vw;
- padding-bottom: 8rem;
  width: 100%;
  font-size: 2vw;
  z-index: 17;
@@ -78,15 +78,19 @@ z-index: 11;
  color: #ffffff; 
 }
 
+
+
 .grid-wrap {
  position: relative;
- top: 110vw;
+ top: 95vw;
  left: 0;
- padding-top: 18rem;
- padding-bottom: 2rem;
+ padding-top: 4rem;
+ padding-bottom: 4rem;
+ margin: 8rem 0;
  display: grid;
- height: 65vw;
+ height: 100%;
  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+ grid-template-rows: auto;
  grid-column-gap: 2rem;
  grid-row-gap: 1rem;
  background-color:#c1c5c4;
@@ -94,14 +98,14 @@ z-index: 11;
 }
 
 .card {
- width: 20vw;
- height: 30vw;
- margin: 0 auto 3rem auto;
- border-radius: 1rem;
+ min-width: 25vw;
+ min-height: 25vw;
+ margin: 0 auto;
+ border-radius: 60%;
  text-align: center;
+ padding: 0;
  background-color: #000000;
 }
-
 
 
 .desc {
@@ -122,28 +126,119 @@ z-index: 11;
 }
 
 .btn-see {
- border-radius: 5px;
  color: #ffffff;
  background-color:#0E988A;
  font-size: 1vw; 
- margin: 20% auto;
  cursor: pointer;
  padding: 1rem;
  text-decoration: none;
+ min-width: 1vw;
+ min-height: 1vw;
+ border-radius: 50%;
 }
 
 .btn-see:active {
  background-color:#39756f;
  text-decoration: underline; 
 }
-.offer-img {
- top: 85vw;
- width: 40px;
- height: 40px;
- z-index: 100;
-}
+
 
 
 @media screen and (max-width: 768px) {
-    
+
+
+.sky {
+ position: absolute;
+ top: 2vw;
+ left: -10vw;
+ flex: auto;
+ z-index: 4;
+}
+        
+.mountain {
+ position: absolute;
+ top: 13vw;
+ left:-16vw;
+ flex: auto;
+ z-index: 11;
+ }
+        
+.water {
+ position: absolute;
+ top: -45vw;
+ left: 0;
+ flex: auto;
+ z-index: 12;
+ }
+
+ .find {
+ position: absolute;
+ bottom: 50vw;
+ left: 20vw;
+ flex: auto;
+ z-index: 13;
+ color: #ffffff;
+ text-transform: uppercase;
+ font-size: 1.8vw;
+ }
+   
+ .find-arrow {
+ position: absolute;
+ left: 25vw;
+ font-size: 6vw;
+}
+
+.chamonie {
+ position: absolute;
+ left: -92vw;
+ top: 220vw;
+ font-size: 2vw;
+ z-index: 16;
+ font-size: 2.5vw;
+ color: #ffffff;
+}
+
+.top {
+ top: 320vw;
+}
+
+.grid-wrap {
+ position: relative;
+ top: 280vw;
+ height: auto;
+ left: 0;
+ padding-top: 18rem;
+ padding-bottom: 2rem;
+ display: grid;
+ grid-template-columns: 1fr;
+ grid-column-gap: 2rem;
+ grid-row-gap: 1rem;
+ background-color:#c1c5c4;
+ align-items: center;
+ }
+
+ .card {
+  min-width: 80vw;
+  min-height: 80vw;
+  margin: 2rem auto;
+  border-radius: 60%;
+  text-align: center;
+  background-color: #000000;
+  }
+
+  .price {
+   font-size: 3vw;
+  }
+   
+  .btn-see {
+   font-size: 3vw; 
+   min-width: 3vw;
+   min-height: 3vw;
+   }
+
+   .desc {
+    padding: 2.2rem;
+    font-size: 6vw;
+   }
+         
 }
