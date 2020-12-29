@@ -38,6 +38,7 @@ const Home = () => {
                 Like what you see? Explore Chamonie, France!</h1>
         </div>
         <div className="find"><h1>Find your dream destination</h1><BsChevronDoubleDown className="find-arrow"/></div>
+        
         <h1 className="top" style={{transform: `translateX(${offset * -0.5}px)`}}> Top Destinations </h1>
         <div className="grid-wrap">
           {offersData.map( offer => 
