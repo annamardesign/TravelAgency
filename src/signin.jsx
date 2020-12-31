@@ -76,7 +76,7 @@ class SignIn extends Component {
                                  onChange = {this.handleChange}
                                  autoFocus 
                                  type ="password" 
-                                 placeholder="Choose your password" 
+                                 placeholder="Enter your password" 
                                  id ="password"></input>
                             </label>
                             <button  className="button-sign-in" type="submit">Sign in</button>
