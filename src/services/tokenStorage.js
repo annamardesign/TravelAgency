@@ -2,8 +2,8 @@ import axios from "axios";
 
 export class TokenStorage {
 
-     static  LOCAL_STORAGE_TOKEN = 'access_token';
-     static  LOCAL_STORAGE_REFRESH_TOKEN = 'refresh_token';
+    static  LOCAL_STORAGE_TOKEN = 'access_token';
+    static  LOCAL_STORAGE_REFRESH_TOKEN = 'refresh_token';
   
   
     static getNewToken() {
@@ -20,6 +20,7 @@ export class TokenStorage {
           .then(response => {
   
             this.storeToken(response.data.access_token);
+            this.storeRefreshToken(response.data.refresh_token);
             resolve(response.data.access_token);
           })
           .catch((error) => {
@@ -27,17 +28,27 @@ export class TokenStorage {
           });
       });
     }
-    
+
     static storeToken(access_token) {
       localStorage.setItem(TokenStorage.LOCAL_STORAGE_TOKEN, access_token);
     }
+
+    static storeRefreshToken(refreshToken) {
+        localStorage.setItem(TokenStorage.LOCAL_STORAGE_REFRESH_TOKEN, refreshToken);
+    }
   
-   static clear() {
+    static clear() {
       localStorage.removeItem(TokenStorage.LOCAL_STORAGE_TOKEN);
+      localStorage.removeItem(TokenStorage.LOCAL_STORAGE_REFRESH_TOKEN);
     }
   
   
-  static getToken() {
+   static getToken() {
       return localStorage.getItem(TokenStorage.LOCAL_STORAGE_TOKEN);
     }
+
+   static getRefreshToken(){
+      return localStorage.getItem(TokenStorage.LOCAL_STORAGE_REFRESH_TOKEN);
+    }
+    
   }
