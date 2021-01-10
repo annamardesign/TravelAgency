@@ -1,46 +1,66 @@
-import axios from "axios";
-import logger from "./logService";
-import { toast } from "react-toastify";
-
-axios.defaults.baseURL = 'https://test.api.amadeus.com/v1';
+import axios from 'axios';
+import {TokenStorage} from "./tokenStorage.js";
 
 
-axios.interceptors.response.use(null, error => {
-  const expectedError =
-    error.response &&
-    error.response.status >= 400 &&
-    error.response.status < 500;
+const axiosApiInstance = axios.create();
 
-  if (!expectedError) {
-    logger.log(error);
-    toast.error("An unexpected error occurrred.");
-  }
-
-  return Promise.reject(error);
+axiosApiInstance.interceptors.request.use(
+  async config => {
+    TokenStorage.getNewToken();
+    const value = TokenStorage.getToken();
+    // const keys = JSON.parse(value)
+    config.headers = { 
+      'Authorization': `Bearer ${value}`      
+    }
+    return config;
+  },
+  error => {
+    Promise.reject(error)
 });
 
-function getToken() {
-  let config = {
-    headers: {
-      'content-type': 'application/x-www-form-urlencoded'
-    }
-  }
-  let data = 'grant_type=client_credentials&client_id=H9AYNmHNS4PBgqfmUDVswAGGwZJLFag7&client_secret=IYhdbf1AigiNgu0O'
-  let tokenType 
-  let accessToken
-  axios.post("https://test.api.amadeus.com/v1/security/oauth2/token", data, config)  
-    .then(response  => {
-      console.log(response.data)
-      tokenType = response.data.token_type
-      accessToken = response.data.access_token
-    })
-  axios.defaults.headers.common["Authorization"] = tokenType + " " + accessToken;
-}
+// axiosApiInstance.interceptors.response.use((response) => {
+//   return response.data
+// }, async function (error) {
+//   const originalRequest = error.config;
+//   if (error.response.status === 403 && !originalRequest._retry) {
+//     originalRequest._retry = true;
+//     // const access_token = await refreshAccessToken();            
+//     return axiosApiInstance(originalRequest);
+//   }
+//   return Promise.reject(error);
+// });
 
-export default {
-  get: axios.get,
-  post: axios.post,
-  put: axios.put,
-  delete: axios.delete,
-  getToken: getToken()
-};
+
+
+// axios(config)
+// .then(function (response) {
+//   return JSON.stringify(response.data);
+// })
+// .catch(function (error) {
+//   console.log(error);
+// });
+
+
+
+// let config = {
+//     method: 'get',
+//     headers: { 
+//       'Authorization': `Bearer ${accessToken}`
+//     }
+//   };
+  
+//   axios(config)
+//   .then(function (response) {
+//     return JSON.stringify(response.data);
+//   })
+  
+//   axios.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;
+  
+
+  export default {
+    get: axiosApiInstance.get,
+    post: axiosApiInstance.post,
+    put: axiosApiInstance.put,
+    delete: axiosApiInstance.delete
+  };
+ 

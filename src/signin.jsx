@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Joi from 'joi-browser';
+import * as userService from './services/userService';
 import './signin.css';
 import Offers from './offers.jsx';
 
@@ -45,15 +46,25 @@ class SignIn extends Component {
        this.setState({ account });
     }
 
-    doSubmit = () => {
-        //call server
-    console.log("Submitted")
-    }
+    doSubmit = async () => {
+        try {
+         await userService.register(this.state.data);
+        }
+      catch(ex) {
+          if(ex.response && ex.response.status === 400) {
+              const errors = {...this.state.errors};
+              errors.email = ex.response.data;
+              this.setState({ errors });
+          }
+
+      }
+    };
 
     render() { 
         const { account } = this.state;
 
         return (<React.Fragment>
+            <Offers/>
             <div className="email-sign-in">
                 <div className="email-container-sign-in">
                     <h1>Book your trip now</h1>

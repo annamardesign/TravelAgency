@@ -27,10 +27,25 @@ export const offersData = [
       {
       url: "",
       image: require("../images/riviera.jpg"),
-      price: "499 USD",
+      price: "1599 USD",
       id: "4",
-      description: "Riviera"
-      }
+      description: "Peru"
+      },
+      {
+        url: "",
+        image: require("../images/riviera.jpg"),
+        price: "499 USD",
+        id: "5",
+        description: "France"
+        },
+        {
+          url: "",
+          image: require("../images/riviera.jpg"),
+          price: "299 USD",
+          id: "6",
+          description: "Italy"
+          }
+          
 ];
 
   

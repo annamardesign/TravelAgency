@@ -85,7 +85,7 @@ padding: 0;
 
  .menu-icon {
   display: block;
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   transform: translate(-100%, 60%);
@@ -130,7 +130,7 @@ padding: 0;
 
   .right {
     margin-right: 5rem;
-    margin-top: 0rem;
+    margin-top: -1.3rem;
   }
 
   .navbar a:hover {

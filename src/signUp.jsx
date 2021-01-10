@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Joi from 'joi-browser';
+import { register } from './services/userService';
 import './signup.css';
 
 
@@ -45,9 +46,8 @@ class SignUp extends Component {
        this.setState({ account });
     }
 
-    doSubmit = () => {
-        //call server
-    console.log("Submitted")
+    doSubmit = async () => {
+       await register(this.state.account);
     }
 
     render() { 
