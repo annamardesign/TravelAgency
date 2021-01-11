@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import http from "./services/httpService";
+import { MdExpandMore } from 'react-icons/md';
+import './offers.css';
 
 const baseApiUrl = "https://test.api.amadeus.com/v1";
 const apiEndPoint = "/shopping/activities";
@@ -24,13 +26,23 @@ class Offers extends Component {
     render() { 
 
         return ( <React.Fragment>
-          <div>Offers</div>
+          <div className="deals-container">
             {this.state.deals.map(deal => (
-              <div key={deal.id}>
-                <div className="name">{deal.name}</div>
-                <div className="price">{deal.price.amount} {deal.price.currencyCode} <a className="book" href={deal.bookingLink}>Book</a></div>
-                <div className="image"><img src={deal.pictures}/></div>
+              <div className="activity-wrapper">
+              <div className="activity" key={deal.id}>
+                <div className="details">
+                  <div className="icon"><MdExpandMore/></div>
+                  <div className="activity-description"><p className="more">{deal.shortDescription}</p></div>
+                </div>
+                 <div className="activity-img">
+                  <img src={deal.pictures}/>
+                 </div>
+                 <div className="activity-price">{deal.price.amount} {deal.price.currencyCode} 
+                 <a className="activity-bookingLink" href={deal.bookingLink}>Book</a></div>
+                 <div className="activity-name">{deal.name}</div>
+            </div>
             </div>))} 
+            </div>
 
         </React.Fragment> );
     }
