@@ -100,8 +100,6 @@ html, body {
     opacity: 1;
 }
 
-
-
 .activity-description {
     position: relative;
     width: 80%;
@@ -114,12 +112,13 @@ html, body {
     opacity: 0;
     color: #fff;
     z-index: 12;
+    transform: scale(0.5);
     transform: translateY(-100%);
     transition: opacity 0.2s, transform 0.8s;
 }
 .activity-description:hover {
     opacity: 1;
+    transform: scale(1);
     transform: translateY(0);
     text-align: left;
-    color: #fff;
 }
