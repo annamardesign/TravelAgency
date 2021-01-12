@@ -34,8 +34,8 @@ class Offers extends Component {
                   <div className="icon"><MdExpandMore/></div>
                   <div className="activity-description"><p className="more">{deal.shortDescription}</p></div>
                 </div>
-                 <div className="activity-img">
-                  <img src={deal.pictures}/>
+                 <div className="activity-img-wrap">
+                  <img className="activity-image" src={deal.pictures}/>
                  </div>
                  <div className="activity-price">{deal.price.amount} {deal.price.currencyCode} 
                  <a className="activity-bookingLink" href={deal.bookingLink}>Book</a></div>
