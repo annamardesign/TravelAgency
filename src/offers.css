@@ -64,7 +64,6 @@ html, body {
 .activity-name {
     margin: 0.7rem auto;
     padding: 0;
-    height:100%;
     width: 50%;
     position:relative;
     float:left;
@@ -99,18 +98,27 @@ html, body {
     top:85px;
     color:white;
     opacity: 1;
-  }
+}
+
+
 
 .activity-description {
-    padding: 5%;
+    position: relative;
+    width: 80%;
+    right: 5px;
+    top: 135px;
+    padding: 0;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    font-size: 1vw;
     opacity: 0;
-    transform: scale(0.5);
-    transform: translateY(-200%);
+    color: #fff;
+    z-index: 12;
+    transform: translateY(-100%);
     transition: opacity 0.2s, transform 0.8s;
 }
 .activity-description:hover {
     opacity: 1;
-    transform: scale(1);
     transform: translateY(0);
     text-align: left;
     color: #fff;
