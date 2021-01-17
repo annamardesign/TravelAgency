@@ -2,23 +2,17 @@ import React, { useState, useEffect } from 'react';
 import './dropdown.css';
 
 
-function Dropdown () {
-
-    const [options, setOptions] = useState("");
-
-    const handleSelect = event => {
-        if(event.target.value !== "") {
-        setOptions(event.target.value)
-        }
-  }
-   
+const Dropdown = ({value, onSelect, selectedCity}) => {
 
     return (
         <React.Fragment>
         
-            <select  onSelect={handleSelect}>
-             <option value="Barcelona">Barcelona</option>
-             <option value="Madrid">Madrid</option>
+            <select name="select" onSelect={(e) => (e.currentTarget.value)}>
+            <option value="" />
+              {value.map(option => (
+               <option key={option} value={option}>
+               {option}
+             </option>))}
             </select>
 
                         {/* // <li key={index}>
@@ -29,7 +23,7 @@ function Dropdown () {
                     
         
                
-                <input type="submit" value="Go" />
+        
         
 
         </React.Fragment>

@@ -9,8 +9,18 @@ const apiEndPoint = "/shopping/activities";
 
 class Offers extends Component {
     state = { 
-        deals: []
+        deals: [],
+        options: ["Barcelona", "Madrid"],
+        selectedCity: ""
      }
+
+
+    handleSelect = event => {
+        if(event.target.value !== "") {
+        this.setState({selectedCity:event.target.value})
+        }
+  }
+   
       async componentDidMount() {
     
       const { data:deals } = await http.get(baseApiUrl + apiEndPoint, {
@@ -31,7 +41,8 @@ class Offers extends Component {
             <div className="find-text">Find activities for your chosen destination</div>
             <div className="find-destinations">
               <h3>Destinations</h3>
-              <Dropdown/>
+              <Dropdown value={this.state.options} onSelect={this.handleSelect} selectedCity ={this.state.selectedCity}/>
+              <input type="submit" value="Go" />
             </div>
           
           </div>
