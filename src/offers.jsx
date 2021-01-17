@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import http from "./services/httpService";
 import { MdExpandMore } from 'react-icons/md';
+import Dropdown from './dropdown.jsx';
 import './offers.css';
 
 const baseApiUrl = "https://test.api.amadeus.com/v1";
@@ -26,6 +27,14 @@ class Offers extends Component {
     render() { 
 
         return ( <React.Fragment>
+          <div className="find-container">
+            <div className="find-text">Find activities for your chosen destination</div>
+            <div className="find-destinations">
+              <h3>Destinations</h3>
+              <Dropdown/>
+            </div>
+          
+          </div>
           <div className="deals-container">
             {this.state.deals.map(deal => (
               <div className="activity-wrapper">

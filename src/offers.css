@@ -3,8 +3,28 @@ html, body {
     font-family: sans-serif;
   }
 
+.find-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 14vw;
+}
+.find-destinations {
+    padding: 2rem;
+    border-top-left-radius: 100px;  
+    border-top-right-radius: 100px; 
+    border: 10px solid #0E988A;
+    border-bottom: 0;
+    color: #fff;
+    background:#0E988A;
+}
+.find-text {
+    margin-right: 1rem;
+    color: #0d6860;
+}
+
 .deals-container {
-    margin-top: 16vw;
+    margin-top: 4vw;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
