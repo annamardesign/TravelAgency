@@ -4,9 +4,9 @@ import './dropdown.css';
 
 function Dropdown () {
 
-    const [options, setOptions] = useState("Barcelona");
+    const [options, setOptions] = useState("");
 
-    const handleChange = event => {
+    const handleSelect = event => {
         if(event.target.value !== "") {
         setOptions(event.target.value)
         }
@@ -16,7 +16,7 @@ function Dropdown () {
     return (
         <React.Fragment>
         
-            <select value={options}  onChange={handleChange}>
+            <select  onSelect={handleSelect}>
              <option value="Barcelona">Barcelona</option>
              <option value="Madrid">Madrid</option>
             </select>
