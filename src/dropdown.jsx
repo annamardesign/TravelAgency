@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import './dropdown.css';
 
 
-const Dropdown = ({value, onSelect, selectedCity}) => {
+const Dropdown = ({options, onChange}) => {
 
     return (
         <React.Fragment>
         
-            <select name="select" onSelect={(e) => (e.currentTarget.value)}>
-            <option value="" />
-              {value.map(option => (
+            <select onChange={onChange}>
+            <option value="">Select a city</option>
+              {options.map(option => (
                <option key={option} value={option}>
                {option}
              </option>))}

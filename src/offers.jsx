@@ -6,43 +6,63 @@ import './offers.css';
 
 const baseApiUrl = "https://test.api.amadeus.com/v1";
 const apiEndPoint = "/shopping/activities";
+const cityCoordinates = [
+  { 
+    city: "Barcelona",
+    coordinates:{
+      latitude: "41.39715",
+      longitude: "2.160873"
+    }
+  },
+  { 
+    city: "Madrid",
+    coordinates:{
+      latitude: "40.41436995",
+      longitude: "3.69170868"
+    }
+  }
+]
 
 class Offers extends Component {
     state = { 
-        deals: [],
         options: ["Barcelona", "Madrid"],
-        selectedCity: ""
+        selectedCity: "",
+        deals: [],
      }
 
-
-    handleSelect = event => {
-        if(event.target.value !== "") {
-        this.setState({selectedCity:event.target.value})
-        }
-  }
-   
-      async componentDidMount() {
     
-      const { data:deals } = await http.get(baseApiUrl + apiEndPoint, {
-          params: {
-            latitude: 41.39715,
-            longitude: 2.160873,
-            radius: 1
-          }, 
-        })
-        let offersList = deals['data'];
-        this.setState({ deals: offersList });
+    handleChange = e => {
+      if(e.target.value !== "") {
+        this.setState({selectedCity:e.target.value}) 
+        let selectedCityCoordinates = cityCoordinates[`${this.state.selectedCity}`];
+         const { data:deals } = http.get(baseApiUrl + apiEndPoint, {
+           params: {
+          latitude: `${selectedCityCoordinates.latitude}`,
+           longitude: `${selectedCityCoordinates.longitude}`,
+           radius: 1
+           }, 
+         })
+       let offersList = deals['data'];
+       this.setState({ deals: offersList, loading: true });
+       
       }
+     }
+       handleSubmit = () => {
+       this.loadData();
+       }
+     
 
     render() { 
+
+      const{options, selectedCity} = this.state;
 
         return ( <React.Fragment>
           <div className="find-container">
             <div className="find-text">Find activities for your chosen destination</div>
             <div className="find-destinations">
               <h3>Destinations</h3>
-              <Dropdown value={this.state.options} onSelect={this.handleSelect} selectedCity ={this.state.selectedCity}/>
-              <input type="submit" value="Go" />
+                <Dropdown options={options} onChange={this.handleChange} value={selectedCity}/>
+              <input type="submit" onSubmit = {this.handleSubmit} value="Go" /> 
             </div>
           
           </div>
@@ -66,8 +86,9 @@ class Offers extends Component {
 
         </React.Fragment> );
     }
-}
+  }
  
 export default Offers;
 
 
+  
