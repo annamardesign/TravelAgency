@@ -3,8 +3,20 @@ html, body {
     font-family: sans-serif;
   }
 
-.deals-container {
+.select-container {
     margin-top: 16vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-left: 3vw;
+}
+
+.select {
+    width: 50vw;
+    height: 8vw; 
+}
+
+.deals-container {
+    margin-top: 10vw;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }

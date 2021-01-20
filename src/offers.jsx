@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import http from "./services/httpService";
+import Select from "./select.jsx";
 import { MdExpandMore } from 'react-icons/md';
 import './offers.css';
 
@@ -8,7 +9,9 @@ const apiEndPoint = "/shopping/activities";
 
 class Offers extends Component {
     state = { 
-        deals: []
+        deals: [],
+        options: ["Barcelona", "Madrid"],
+        selectedCity: ""
      }
       async componentDidMount() {
     
@@ -23,10 +26,19 @@ class Offers extends Component {
         this.setState({ deals: offersList });
       }
 
+      handleChange = (e) => {
+        this.setState({selectedCity: e.target.value});
+      }
+
     render() { 
+      const {options, selectedCity} = this.state
 
         return ( <React.Fragment>
-          <div className="deals-container">
+            <div className="select-container">
+            <Select className="select" options={options} onChange={this.handleChange} value={selectedCity} />
+            <p>{selectedCity}</p>
+            </div>
+            <div className="deals-container">
             {this.state.deals.map(deal => (
               <div className="activity-wrapper">
               <div className="activity" key={deal.id}>
