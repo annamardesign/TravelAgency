@@ -26,7 +26,7 @@ const Navbar = () => {
             </ul>
             <ul className="right">
              <li><NavLink to="/signup" className="signup" onClick={closeMobileMenu}>Sign up</NavLink></li>
-             <li><NavLink to="/signin" className="signin" onClick={closeMobileMenu}>Sign in</NavLink></li>
+             <li><NavLink to="/book" className="" onClick={closeMobileMenu}>Book</NavLink></li>
             </ul>
          </div>
         </nav>

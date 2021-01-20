@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import Joi from 'joi-browser';
 import * as userService from './services/userService';
-import './signin.css';
-import Offers from './offers.jsx';
+import CityOffers from './cityoffers.jsx';
+import withGetData from './withGetData';
+import './book.css';
 
-class SignIn extends Component {
+
+const apiEndPoint = "/shopping/activities";
+
+const CityOffersWithGetData = withGetData(CityOffers, apiEndPoint);
+class Book extends Component {
     state = {
      account: {email:'', password:''},
      errors: {}
@@ -60,11 +65,13 @@ class SignIn extends Component {
       }
     };
 
+    
+
     render() { 
         const { account } = this.state;
 
         return (<React.Fragment>
-            <Offers/>
+            <CityOffersWithGetData/>
             <div className="email-sign-in">
                 <div className="email-container-sign-in">
                     <h1>Book your trip now</h1>
@@ -102,5 +109,5 @@ class SignIn extends Component {
     }
 }
  
-export default SignIn;
+export default Book;
 

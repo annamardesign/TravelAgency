@@ -1,19 +1,23 @@
 import React from 'react';
 import {Route, Redirect, Switch} from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
 import NavBar from "./navbar";
 import Logo from "./logo";
 import Home from "./home";
 import Explore from "./explore";
 import SignUp from "./signup";
-import SignIn from "./signin";
+import Book from "./book";
+import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 
 
 function App() {
 
+  
   return (
     <React.Fragment>
+      <ToastContainer/>
     <Router>
     <NavBar />
       <Switch>
@@ -21,7 +25,7 @@ function App() {
       <Route path="/home"><Home/></Route>
       <Route path="/explore"><Explore/></Route>
       <Route path="/signup"><SignUp/></Route>
-      <Route path="/signin"><SignIn/></Route>
+      <Route path="/book"><Book/></Route>
       <Redirect from="/" exact to ="/home"/>
       <Redirect from="/logo" exact to ="/home"/>
       <Redirect to="/not-found"/>

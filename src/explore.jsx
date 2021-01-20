@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import mountains from './images/mountains.jpg';
 import city from './images/city.jpg';
 import sea from './images/sea.jpg';

@@ -2,7 +2,9 @@ import axios from 'axios';
 import {TokenStorage} from "./tokenStorage.js";
 
 
-const axiosApiInstance = axios.create();
+const axiosApiInstance = axios.create({
+  baseURL: 'https://test.api.amadeus.com/v1'
+});
 
 axiosApiInstance.interceptors.request.use(
   async config => {
@@ -19,18 +21,18 @@ axiosApiInstance.interceptors.request.use(
 
 
 
-axiosApiInstance.interceptors.response.use((response) => {
-  return response
-}, async function (error) {
-  const originalRequest = error.config;
-  if (error.response.status === 403 && !originalRequest._retry) {
-    originalRequest._retry = true;
-    const access_token = await TokenStorage.getRefreshToken();            
-    axios.defaults.headers.common['Authorization'] = 'Bearer ' + access_token;
-    return axiosApiInstance(originalRequest);
-  }
-  return Promise.reject(error);
-});
+// axiosApiInstance.interceptors.response.use((response) => {
+//   return response
+// }, async function (error) {
+//   const originalRequest = error.config;
+//   if (error.response.status === 403 && !originalRequest._retry) {
+//     originalRequest._retry = true;
+//     const access_token = await TokenStorage.getRefreshToken();            
+//     axios.defaults.headers.common['Authorization'] = 'Bearer ' + access_token;
+//     return axiosApiInstance(originalRequest);
+//   }
+//   return Promise.reject(error);
+// });
    
   
 
