@@ -8,8 +8,8 @@ const Select = ({options, onChange}) => {
             <select name="select" onClick={onChange}>
             <option value="Select your destination">Select your destination</option>
               {options.map(option => (
-               <option key={option} value={option}>
-               {option}
+               <option key={option.key} value={option.value}>
+               {option.text}
              </option>))}
             </select>
 

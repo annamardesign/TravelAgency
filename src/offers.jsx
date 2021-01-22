@@ -1,17 +1,30 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import http from "./services/httpService";
 import Select from "./select.jsx";
+import * as actions from './actions';
 import { MdExpandMore } from 'react-icons/md';
 import './offers.css';
 
 const baseApiUrl = "https://test.api.amadeus.com/v1";
 const apiEndPoint = "/shopping/activities";
 
+const mapStateToProps = state => {
+  return {
+    options: state.options,
+    selectedValue: state.selectedValue
+  };
+};
+
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     onSelectChange: event => 
+//       dispatch(setSelect(event.target.value))
+//     };
+// };
 class Offers extends Component {
     state = { 
         deals: [],
-        options: ["Barcelona", "Madrid"],
-        selectedCity: ""
      }
       async componentDidMount() {
     
@@ -26,17 +39,17 @@ class Offers extends Component {
         this.setState({ deals: offersList });
       }
 
-      handleChange = (e) => {
-        this.setState({selectedCity: e.target.value});
-      }
+      // handleChange = (e) => {
+      //   this.setState({selectedCity: e.target.value});
+      // }
 
     render() { 
-      const {options, selectedCity} = this.state
+      const {selectedValue, options, setSelect} = this.props
 
         return ( <React.Fragment>
             <div className="select-container">
-            <Select className="select" options={options} onChange={this.handleChange} value={selectedCity} />
-            <p>{selectedCity}</p>
+            <Select className="select" options={options} onChange={(e, data) =>{setSelect(e, data)}} value={selectedValue} />
+            <p>{selectedValue}</p>
             </div>
             <div className="deals-container">
             {this.state.deals.map(deal => (
@@ -58,8 +71,9 @@ class Offers extends Component {
 
         </React.Fragment> );
     }
+   
 }
  
-export default Offers;
+export default connect(mapStateToProps, actions) (Offers);
 
 
