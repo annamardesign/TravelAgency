@@ -1,79 +1,67 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import http from "./services/httpService";
-import Select from "./select.jsx";
-import * as actions from './actions';
-import { MdExpandMore } from 'react-icons/md';
+import { setSelect } from './actions';
+import * as Cities from './cities';
 import './offers.css';
 
-const baseApiUrl = "https://test.api.amadeus.com/v1";
-const apiEndPoint = "/shopping/activities";
+// const baseApiUrl = "https://test.api.amadeus.com/v1";
+// const apiEndPoint = "/shopping/activities";
 
-const mapStateToProps = state => {
-  return {
-    options: state.options,
-    selectedValue: state.selectedValue
-  };
-};
-
-// const mapDispatchToProps = dispatch => {
+// const mapStateToProps = state => {
 //   return {
-//     onSelectChange: event => 
-//       dispatch(setSelect(event.target.value))
-//     };
+//     options: state.optionsReducer.options,
+//     selectedValue: state.selectedValueReducer.selectedValue
+//   };
 // };
-class Offers extends Component {
+
+//  const mapDispatchToProps = (dispatch) => {
+//    return {
+//     onChange: (event) =>  dispatch(setSelect(event.target.value))
+//      };
+// };
+  class Offers extends Component {
     state = { 
-        deals: [],
-     }
-      async componentDidMount() {
-    
-      const { data:deals } = await http.get(baseApiUrl + apiEndPoint, {
-          params: {
-            latitude: 41.39715,
-            longitude: 2.160873,
-            radius: 1
-          }, 
-        })
-        let offersList = deals['data'];
-        this.setState({ deals: offersList });
-      }
+        selectedValue:""
+    }
 
-      // handleChange = (e) => {
-      //   this.setState({selectedCity: e.target.value});
-      // }
-
-    render() { 
-      const {selectedValue, options, setSelect} = this.props
-
+    render () {
+      console.log(Cities)
+      const { selectedValue } = this.state
+     return ( 
+     <React.Fragment>
+       <section className="select-container">
+         <div>
+           {this.renderCitySelection()}
+        </div>
+       </section>
+       <div>
+       {this.renderSelectedCity(selectedValue)}
+       </div>
+      </React.Fragment>
+     )
+    }
+    renderCitySelection() { 
         return ( <React.Fragment>
-            <div className="select-container">
-            <Select className="select" options={options} onChange={(e, data) =>{setSelect(e, data)}} value={selectedValue} />
-            <p>{selectedValue}</p>
-            </div>
-            <div className="deals-container">
-            {this.state.deals.map(deal => (
-              <div className="activity-wrapper">
-              <div className="activity" key={deal.id}>
-                <div className="details">
-                  <div className="icon"><MdExpandMore/></div>
-                  <div className="activity-description"><p className="more">{deal.shortDescription}</p></div>
-                </div>
-                 <div className="activity-img-wrap">
-                  <img className="activity-image" src={deal.pictures}/>
-                 </div>
-                 <div className="activity-price">{deal.price.amount} {deal.price.currencyCode} 
-                 <a className="activity-bookingLink" href={deal.bookingLink}>Book</a></div>
-                 <div className="activity-name">{deal.name}</div>
-            </div>
-            </div>))} 
-            </div>
-
+          <select className="select" onChange={(e) => this.setState({selectedValue: e.target.value})} >
+            <option value="Select your destination">Select your destination</option>
+            <option value="Barcelona">Barcelona</option>
+            <option value="Madrid">Madrid</option>
+            </select>
         </React.Fragment> );
     }
-   
+
+    renderSelectedCity() {
+      const { selectedValue } = this.state
+      if(!selectedValue) 
+      return <p>Select your destination</p>;
+      const City = Cities[selectedValue];
+      return <City/>;
+    }
+
 }
  
-export default connect(mapStateToProps, actions) (Offers);
+ 
+export default Offers;
 
 

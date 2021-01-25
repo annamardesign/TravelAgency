@@ -1,49 +1,40 @@
   
-import { combineReducers } from 'redux';
-import {CHANGE_SELECT} from './constants.js';
-import {ADD_DROPDOWN_VALUE} from './constants.js';
+import { CHANGE_SELECT, ADD_DROPDOWN_VALUE } from './constants.js';
 
 
+let selectedValue = ''
 
 let options= [
   {key: 1, 
    text: "Barcelona", 
-   value: "this is the event value"},
+   value: "barcelona"},
 
    {key: 2,
    text: "Madrid",
-   value: "value of option 2"}
+   value: "madrid"}
 ]
 
-const optionsReducer = (state=options, action)=>{
+export const optionsReducer = (state=options, action={})=>{
   switch(action.type){
       case ADD_DROPDOWN_VALUE:
-          return [...state, action.payload]
+          return Object.assign({}, state, {options:action.payload});
       default:
       return state
   } 
 }
 
-const selectedValueReducer = (state="", action) => {
+export const selectedValueReducer = (state=selectedValue, action={}) => {
+  console.log(action.type)
     switch(action.type){
         case CHANGE_SELECT:
-          return action.payload;
+          return action.payload
         default: 
-          return state;
+          return Object.assign({}, state, {selectedValue:action.payload});
     }
 }
 
-const connectReducer = (state= "connected", action) =>{
-  switch(action.type){
-      default:
-      return state
-  }
-}
 
-const reducers ={
-  connected: connectReducer,
-  options: optionsReducer,
-  selectedValue: selectedValueReducer
- }
 
-export default combineReducers(reducers)
+
+
+

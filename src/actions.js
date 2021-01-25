@@ -2,18 +2,15 @@ import {CHANGE_SELECT} from './constants.js';
 import {ADD_DROPDOWN_VALUE} from './constants.js';
 
 
-export const addOptions = (event, data) => {
-    const addedOptions = {key: data.value, 
-        text: data.value, 
-        value: data.value}
+export const addOptions = (text) => {
     return {
      type: ADD_DROPDOWN_VALUE,
-     payload: addedOptions
+     payload: text
     }
 }
-export const setSelect = (event, data) => {
+export const setSelect = (text) => {
     return {
      type: CHANGE_SELECT,
-     payload: data.value
+     payload: text
     }
 }
