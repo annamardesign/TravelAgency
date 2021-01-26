@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import sky from './images/sky.png';
-import mountain from './images/backmountain.png';
-import water from './images/water.png';
-import { offersData } from './services/offersData.js';
+import sky from '../images/sky.png';
+import mountain from '../images/backmountain.png';
+import water from '../images/water.png';
+import { offersData } from '../services/offersData.js';
 import { BsChevronDoubleDown } from 'react-icons/bs';
 import './home.css';
 

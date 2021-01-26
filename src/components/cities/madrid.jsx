@@ -13,7 +13,6 @@ class Madrid extends Component {
             deals: []
          }
           async componentDidMount() {
-        
           const { data:deals } = await http.get(baseApiUrl + apiEndPoint, {
               params: {
                 latitude: 40.41436995,

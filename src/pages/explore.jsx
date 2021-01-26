@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import mountains from './images/mountains.jpg';
-import city from './images/city.jpg';
-import sea from './images/sea.jpg';
-import heritage from './images/heritage.jpg';
+import mountains from '../images/mountains.jpg';
+import city from '../images/city.jpg';
+import sea from '../images/sea.jpg';
+import heritage from '../images/heritage.jpg';
 import './explore.css';
 
 const Explore = () => {

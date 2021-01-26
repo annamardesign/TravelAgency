@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Joi from 'joi-browser';
-import { register } from './services/userService';
+import { register } from '../services/userService';
 import './signup.css';
 
 

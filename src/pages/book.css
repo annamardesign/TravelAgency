@@ -1,3 +1,12 @@
+.offers {
+    background-size: cover;
+    height: 34rem;
+    width: 100%;
+    padding: 6rem calc((100vw - 1500px)/2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .email-sign-in {
     background: linear-gradient(
         180deg,

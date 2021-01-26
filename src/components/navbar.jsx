@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from "react-router-dom";
-import Logo from "./logo.jsx";
+import Logo from "../logo.jsx";
 import { FaBars, FaTimes } from 'react-icons/fa';
 import "./navbar.css";
 
@@ -26,7 +26,7 @@ const Navbar = () => {
             </ul>
             <ul className="right">
              <li><NavLink to="/signup" className="signup" onClick={closeMobileMenu}>Sign up</NavLink></li>
-             <li><NavLink to="/signin" className="signin" onClick={closeMobileMenu}>Sign in</NavLink></li>
+             <li><NavLink to="/book" className="book" onClick={closeMobileMenu}>Book</NavLink></li>
             </ul>
          </div>
         </nav>

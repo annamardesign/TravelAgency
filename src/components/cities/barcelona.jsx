@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import http from "../services/httpService";
+import http from "../../services/httpService";
 import {MdExpandMore} from 'react-icons/md';
 import './barcelona.css';
 
@@ -13,8 +13,8 @@ class Barcelona extends Component {
             deals: []
          }
           async componentDidMount() {
-        
-          const { data:deals } = await http.get(baseApiUrl + apiEndPoint, {
+           this.setState({loading: true});
+           const { data:deals } = await http.get(baseApiUrl + apiEndPoint, {
               params: {
                 latitude: 41.39715,
                 longitude: 2.160873,
@@ -23,12 +23,13 @@ class Barcelona extends Component {
             })
             let offersList = deals['data'];
             this.setState({ deals: offersList });
-          }
+           }
     
         render() { 
     
             return ( <React.Fragment>
               <div className="deals-container">
+
               {this.state.deals.map(deal => (
               <div className="activity-wrapper">
               <div className="activity" key={deal.id}>

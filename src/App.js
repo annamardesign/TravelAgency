@@ -1,12 +1,12 @@
 import React from 'react';
 import {Route, Redirect, Switch} from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
-import NavBar from "./navbar";
+import NavBar from "./components/navbar";
 import Logo from "./logo";
-import Home from "./home";
-import Explore from "./explore";
-import SignUp from "./signup";
-import SignIn from "./signin";
+import Home from "./pages/home";
+import Explore from "./pages/explore";
+import SignUp from "./pages/signup";
+import Book from "./pages/book";
 import './App.css';
 
 
@@ -21,7 +21,7 @@ function App() {
       <Route path="/home"><Home/></Route>
       <Route path="/explore"><Explore/></Route>
       <Route path="/signup"><SignUp/></Route>
-      <Route path="/signin"><SignIn/></Route>
+      <Route path="/book"><Book/></Route>
       <Redirect from="/" exact to ="/home"/>
       <Redirect from="/logo" exact to ="/home"/>
       <Redirect to="/not-found"/>

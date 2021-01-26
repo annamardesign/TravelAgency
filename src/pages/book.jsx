@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import Joi from 'joi-browser';
-import * as userService from './services/userService';
-import './signin.css';
-import Offers from './offers.jsx';
+import * as userService from '../services/userService';
+import './book.css';
+import Offers from '../components/offers.jsx';
 
-class SignIn extends Component {
+class Book extends Component {
     state = {
      account: {email:'', password:''},
      errors: {}
@@ -64,7 +64,7 @@ class SignIn extends Component {
         const { account } = this.state;
 
         return (<React.Fragment>
-            <Offers/>
+            <Offers className="offers"/>
             <div className="email-sign-in">
                 <div className="email-container-sign-in">
                     <h1>Book your trip now</h1>
@@ -102,5 +102,5 @@ class SignIn extends Component {
     }
 }
  
-export default SignIn;
+export default Book;
 
