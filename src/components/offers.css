@@ -4,12 +4,16 @@ html, body {
   }
 
 .select-container {
-    margin-top: 16vw;
-    margin-bottom: 1rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    background-size: cover;
+    height: 14rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6vw;
     margin-left: 3vw;
     color: #0E988A;
+    padding: 0;
 }
 
 .select {
@@ -19,10 +23,10 @@ html, body {
     border-radius: 3px;
     color: #2a2628;
 }
-
-.deals-container {
-    margin-top: 10vw;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+.select_dest_text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 

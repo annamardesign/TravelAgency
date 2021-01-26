@@ -3,11 +3,13 @@ html, body {
     font-family: sans-serif;
   }
 
-  .deals-container {
+
+.deals-container {
     margin-top: 10vw;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
+
 
 .activity-wrapper {
     margin: auto;
@@ -19,6 +21,7 @@ html, body {
     transform: scale(0.95);
     transition: box-shadow 0.5s, transform 0.5s;
 }
+
 .activity-wrapper:hover {
     transform: scale(1);
     box-shadow: 5px 20px 30px rgba(0,0,0,0.2);
@@ -130,4 +133,28 @@ html, body {
     transform: scale(1);
     transform: translateY(0);
     text-align: left;
+}
+
+@media screen and (min-width: 768) and (max-width: 1366px) {
+
+.deals-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+ }
+}
+
+@media screen and (max-width: 768px) {
+    
+    .deals-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    
+    .activity-price {
+        font-size: 3.4vw;
+    }
+    .activity-name {
+        font-size: 3.2vw;
+    }
+    
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import http from "../../services/httpService";
 import {MdExpandMore} from 'react-icons/md';
-import './barcelona.css';
+import './city.css';
 
 
 const baseApiUrl = "https://test.api.amadeus.com/v1";

@@ -44,7 +44,7 @@ import './offers.css';
     renderSelectedCity() {
       const { selectedValue } = this.state
       if(!selectedValue) 
-      return <p>Select your destination</p>;
+      return <p className="select_dest_text">Select your destination</p>;
       const City = Cities[selectedValue];
       return <City/>;
     
