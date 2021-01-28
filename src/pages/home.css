@@ -105,8 +105,15 @@ z-index: 11;
  text-align: center;
  padding: 0;
  background-color: #000000;
+ animation: slide-right 3s both;
+ animation-delay: calc(var(--i) * 2s);
 }
-
+@keyframes slide-right {
+ from {
+    transform: translateY(50%);
+    opacity: 0;
+ }
+}
 
 .desc {
  margin-top: 5rem;

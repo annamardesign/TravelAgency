@@ -41,9 +41,8 @@ const Home = () => {
         
         <h1 className="top" style={{transform: `translateX(${offset * -0.5}px)`}}> Top Destinations </h1>
         <div className="grid-wrap">
-          {offersData.map( offer => 
-            (<div className="card">
-              <img src={offer.image}  alt={offer.description} className="offer-img"/> 
+          {offersData.map( (offer, i) => 
+            (<div className="card" style={{'--i': i}}>
               <h5 className="price">{offer.price}</h5>
               <p className="desc">{offer.description}</p>
               <a href={offer.url} className="btn-see">See itinerary</a>
