@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import chamonie from '../images/chamonie.png';
 import lake from '../images/lake.png';
+import chamoniemobile from '../images/chamoniemobile.jpg';
 import { offersData } from '../services/offersData.js';
 import { BsChevronDoubleDown } from 'react-icons/bs';
 import './home.css';
@@ -27,8 +28,8 @@ const Home = () => {
   }, [])
 
     return (<React.Fragment>
-        
       <div className="header-wrapper">
+      <div className="header-mobile" style={{ backgroundImage: `url(${chamoniemobile})`, backgroundSize: "cover" }}></div>
         <div className="mountain-back" style={{ backgroundImage: `url(${chamonie})`, backgroundSize: "cover" }}></div>
         <div className="mountain-front" 
         style={{

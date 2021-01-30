@@ -8,15 +8,12 @@ import './offers.css';
 
   class Offers extends Component {
     state = { 
-        selectedValue:"",
-        loading: false
+        selectedValue:""
     }
-    if(selectedValue){
-      this.setState({loading:true})
-    }
+    
 
     render () {
-      const { selectedValue, loading } = this.state
+      const { selectedValue } = this.state
      
      return ( 
      <React.Fragment>
@@ -26,7 +23,7 @@ import './offers.css';
         </div>
        </section>
        <div>
-           {loading? "Your destination activities are loading..." : this.renderSelectedCity()}
+           {this.renderSelectedCity()}
        </div>
       </React.Fragment>
      )

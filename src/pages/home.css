@@ -29,6 +29,9 @@
    height: 100vh;
    z-index: 300;
 }
+ .header-mobile {
+    display: none;
+ }
 
 
 
@@ -136,13 +139,7 @@
 
 
 @media screen and (min-width: 768) and (max-width: 1366px) {
-   .sky {
-      position: absolute;
-      top: 2vw;
-      left: -10vw;
-      flex: auto;
-      z-index: 4;
-     }
+   
              
      .mountain {
       position: absolute;
@@ -158,6 +155,9 @@
       left: 0;
       flex: auto;
       z-index: 12;
+      }
+      .header-mobile {
+         display: none;
       }
      
       .find {
@@ -236,36 +236,27 @@
 @media screen and (max-width: 767px) {
 
 
-.sky {
- position: absolute;
- top: 2vw;
- left: -10vw;
- flex: auto;
- z-index: 4;
+.water .mountain-back .mountain-front{
+   display: none;
 }
-        
-.mountain {
- position: absolute;
- top: 13vw;
- left:-16vw;
- flex: auto;
- z-index: 11;
- }
-        
-.water {
- position: absolute;
- top: -50vw;
- left: 0;
- flex: auto;
- z-index: 12;
- }
+
+.header-mobile {
+   position: absolute;
+   top: 11vw;
+   left: 0;
+   width: 100vw;
+   height: 100vh;
+   z-index: 10;
+}
+
+   
 
  .find {
  position: absolute;
- bottom: 50vw;
+ bottom: 90vw;
  left: 20vw;
  flex: auto;
- z-index: 13;
+ z-index: 300;
  color: #ffffff;
  text-transform: uppercase;
  font-size: 1.8vw;
@@ -275,6 +266,7 @@
  position: absolute;
  left: 25vw;
  font-size: 6vw;
+ z-index: 300;
 }
 
 .chamonie {
@@ -288,16 +280,25 @@
 }
 
 .top {
- top: 320vw;
+ position: absolute;
+ top: 165vw;
+ height: 40vw;
+ width: 100%;
+ font-size: 2vw;
+ z-index: 500;
+ font-size: 7vw;
+ text-align: center;
+ color: #ffffff; 
 }
 
 .grid-wrap {
  position: relative;
- top: 280vw;
+ top: -50vw;
  height: auto;
  left: 0;
- padding-top: 18rem;
- padding-bottom: 2rem;
+ padding-top: 4rem;
+ padding-bottom: 0;
+ margin-bottom: 0;
  display: grid;
  grid-template-columns: 1fr;
  grid-column-gap: 2rem;
