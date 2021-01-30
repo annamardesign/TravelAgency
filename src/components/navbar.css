@@ -178,8 +178,8 @@ padding: 0;
     overflow: hidden;
     width: 76vw;
     height: 76vw;
-    top:-2rem;
-    right: -4rem;
+    top:-1.5rem;
+    right:-4rem;
     z-index:500;
     opacity: 0;
     animation: 1s appear forwards

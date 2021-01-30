@@ -30,4 +30,12 @@ html, body {
     justify-content: center;
 }
 
+@media screen and (max-width: 767px) {
+    
+    .select {
+        width: 60vw;
+        height: 8vw; 
+    }
+}
+
 

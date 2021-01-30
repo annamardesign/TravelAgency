@@ -141,7 +141,7 @@ html, body {
  }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     
     .deals-container {
         grid-template-columns: 1fr;
@@ -153,6 +153,10 @@ html, body {
     }
     .activity-name {
         font-size: 3.2vw;
+    }
+
+    .activity-image {
+        height: 70vw;
     }
     
 }
