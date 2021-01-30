@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import sky from '../images/sky.png';
-import mountain from '../images/backmountain.png';
-import water from '../images/water.png';
+import chamonie from '../images/chamonie.png';
+import lake from '../images/lake.png';
 import { offersData } from '../services/offersData.js';
 import { BsChevronDoubleDown } from 'react-icons/bs';
 import './home.css';
@@ -27,16 +26,18 @@ const Home = () => {
     }
   }, [])
 
-    return (<div className="page">
-        <div className="sky"><img src={sky} alt="sky"/></div>
-        <div className="mountain"><img src={mountain} alt="mountain"/></div>
-        <div className="mountain"><img src={mountain} alt="mountain" style={{
-        transform: `translateY(${offset * 0.5}px)`}} /></div>
-        <div className="water">
-            <img src={water} alt="water"/>
-            <h1 className="chamonie" style={{transform: `translateX(${offset * 1}px)`}}>
-                Like what you see? Explore Chamonie, France!</h1>
+    return (<React.Fragment>
+        
+      <div className="header-wrapper">
+        <div className="mountain-back" style={{ backgroundImage: `url(${chamonie})`, backgroundSize: "cover" }}></div>
+        <div className="mountain-front" 
+        style={{
+        transform: `translateY(${offset * 0.5}px)`, backgroundImage: `url(${chamonie})`, backgroundSize: "cover"}}></div>
+        <div className="water" style={{ backgroundImage: `url(${lake})`, backgroundSize: "cover" }}>
         </div>
+        
+      </div>
+        
         <div className="find"><h1>Find your dream destination</h1><BsChevronDoubleDown className="find-arrow"/></div>
         
         <h1 className="top" style={{transform: `translateX(${offset * -0.5}px)`}}> Top Destinations </h1>
@@ -49,7 +50,7 @@ const Home = () => {
             </div>)
             )}
         </div>
-    </div>);
+        </React.Fragment>);
 }
  
 export default Home;
