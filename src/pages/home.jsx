@@ -30,7 +30,7 @@ const Home = () => {
     return (<React.Fragment>
       <div className="header-wrapper">
       <div className="header-mobile" style={{ backgroundImage: `url(${chamoniemobile})`, backgroundSize: "cover" }}></div>
-        <div className="mountain-back" style={{ backgroundImage: `url(${chamonie})`, backgroundSize: "cover" }}></div>
+        <div className="mountain-back" style={{ backgroundImage: `url(${chamonie})`, backgroundSize: "cover"}}></div>
         <div className="mountain-front" 
         style={{
         transform: `translateY(${offset * 0.5}px)`, backgroundImage: `url(${chamonie})`, backgroundSize: "cover"}}></div>

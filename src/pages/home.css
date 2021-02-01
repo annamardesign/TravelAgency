@@ -36,8 +36,8 @@
 
 
 .find {
- position: absolute;
- bottom: 20vw;
+ position: relative;
+ bottom: 45vh;
  left: 35vw;
  flex: auto;
  z-index: 300;
@@ -54,9 +54,9 @@
 
 
 .top {
- position: absolute;
- top: 50vw;
- height: 40vw;
+ position: relative;
+ margin-bottom:0;
+ padding: 0;
  width: 100%;
  font-size: 2vw;
  z-index: 100;
@@ -70,8 +70,6 @@
  position: relative;
  width: 100vw;
  height: 100vh;
- top: 6vw;
- padding-top: 4rem;
  padding-bottom: 10rem;
  margin: 8rem 0;
  display: grid;
@@ -85,8 +83,8 @@
 }
 
 .card {
- min-width: 25vw;
- min-height: 25vw;
+ width: 330px;
+ height: 330px;
  position: relative;
  margin: 2rem auto;
  border-radius: 60%;
@@ -104,7 +102,8 @@
 }
 
 .desc {
- margin-top: 5rem;
+ position: relative;
+ margin-top: 7rem;
  padding: 1rem;
  font-size: 3vw;
  color:#ffffff;
@@ -113,6 +112,7 @@
 }
 
 .price {
+ position: relative;
  margin-top: 1rem;
  padding: 1rem;
  font-size: 1vw;
@@ -121,6 +121,7 @@
 }
 
 .btn-see {
+ position: relative;
  color: #ffffff;
  background-color:#0E988A;
  font-size: 1vw; 
@@ -135,100 +136,6 @@
 .btn-see:active {
  background-color:#39756f;
  text-decoration: underline; 
-}
-
-
-@media screen and (min-width: 768) and (max-width: 1366px) {
-   
-             
-     .mountain {
-      position: absolute;
-      top: 13vw;
-      left:-16vw;
-      flex: auto;
-      z-index: 11;
-      }
-             
-     .water {
-      position: absolute;
-      top: -50vw;
-      left: 0;
-      flex: auto;
-      z-index: 12;
-      }
-      .header-mobile {
-         display: none;
-      }
-     
-      .find {
-      position: absolute;
-      bottom: 50vw;
-      left: 20vw;
-      flex: auto;
-      z-index: 13;
-      color: #ffffff;
-      text-transform: uppercase;
-      font-size: 1.8vw;
-      }
-        
-      .find-arrow {
-      position: absolute;
-      left: 25vw;
-      font-size: 6vw;
-     }
-     
-     .chamonie {
-      position: absolute;
-      left: -92vw;
-      top: 220vw;
-      font-size: 2vw;
-      z-index: 16;
-      font-size: 2.5vw;
-      color: #ffffff;
-     }
-     
-     .top {
-      top: 320vw;
-     }
-     
-     .grid-wrap {
-      position: relative;
-      top: 280vw;
-      height: auto;
-      left: 0;
-      padding-top: 18rem;
-      padding-bottom: 2rem;
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-column-gap: 2rem;
-      grid-row-gap: 1rem;
-      background-color:#c1c5c4;
-      align-items: center;
-      }
-     
-      .card {
-       min-width: 80vw;
-       min-height: 80vw;
-       margin: 2rem auto;
-       border-radius: 60%;
-       text-align: center;
-       background-color: #000000;
-       }
-     
-       .price {
-        font-size: 3vw;
-       }
-        
-       .btn-see {
-        font-size: 3vw; 
-        min-width: 3vw;
-        min-height: 3vw;
-        }
-     
-        .desc {
-         padding: 2.2rem;
-         font-size: 6vw;
-        }     
 }
 
 
@@ -249,26 +156,8 @@
    z-index: 10;
 }
 
-   
 
- .find {
- position: absolute;
- bottom: 90vw;
- left: 20vw;
- flex: auto;
- z-index: 300;
- color: #ffffff;
- text-transform: uppercase;
- font-size: 1.8vw;
- }
-   
- .find-arrow {
- position: absolute;
- left: 25vw;
- font-size: 6vw;
- z-index: 300;
-}
-
+ 
 .chamonie {
  position: absolute;
  left: -92vw;
@@ -279,17 +168,6 @@
  color: #ffffff;
 }
 
-.top {
- position: absolute;
- top: 165vw;
- height: 40vw;
- width: 100%;
- font-size: 2vw;
- z-index: 500;
- font-size: 7vw;
- text-align: center;
- color: #ffffff; 
-}
 
 .grid-wrap {
  position: relative;
@@ -301,7 +179,7 @@
  margin-bottom: 0;
  display: grid;
  grid-template-columns: 1fr;
- grid-column-gap: 2rem;
+ grid-column-gap: 1rem;
  grid-row-gap: 1rem;
  background-color:#c1c5c4;
  align-items: center;
@@ -322,16 +200,22 @@
    
   .btn-see {
    font-size: 3vw; 
-   min-width: 3vw;
-   min-height: 3vw;
    }
 
    .desc {
-    padding: 2.2rem;
     font-size: 6vw;
    }
          
 }
-
+@media screen and (min-width: 768) and (max-width: 1024px) {
+   
+   .grid-wrap {
+    grid-template-columns: 1fr 1fr;
+    }
+   .price {
+    font-size: 3vw;
+    }
+   
+}
 
    

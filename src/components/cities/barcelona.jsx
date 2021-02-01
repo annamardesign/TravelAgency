@@ -35,7 +35,7 @@ class Barcelona extends Component {
               <div className="activity" key={deal.id}>
                 <div className="details">
                   <div className="icon"><MdExpandMore/></div>
-                  <div className="activity-description"><p className="more">{deal.shortDescription}</p></div>
+                  <div className="activity-description" ><p className="more">{deal.shortDescription}</p></div>
                 </div>
                  <div className="activity-img-wrap">
                   <img className="activity-image" src={deal.pictures}/>
