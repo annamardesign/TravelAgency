@@ -2,7 +2,7 @@ import React from 'react';
 import {Route, Redirect, Switch} from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import NavBar from "./components/navbar";
-import Logo from "./logo";
+import Logo from "./components/logo";
 import Home from "./pages/home";
 import Explore from "./pages/explore";
 import SignUp from "./pages/signup";

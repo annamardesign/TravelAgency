@@ -1,16 +1,32 @@
 
+
+body {
+ overflow-x: hidden;
+ position: relative;
+}
+
 .header-wrapper {
-   overflow: hidden;
+   overflow-x: hidden;
    width: 100vw;
 	height: 100vh;
-	position: relative;
+   position: relative;
+   top: 0;  
+   margin-left: auto;
+   margin-right: auto;
+   background-repeat:no-repeat;
+   background-size:contain;
+   background-position:center;
 }
+
 .mountain-back {
    position: absolute;
    top: 11vw;
    left: 0;
    width: 100vw;
    height: 100vh;
+   background-repeat:no-repeat;
+   background-size:contain;
+   background-position:center;
 }
 
 .mountain-front {
@@ -18,7 +34,10 @@
 	top: 11vw;
 	left: 0;
 	width: 100vw;
-	height: 100vh;
+   height: 100vh;
+   background-repeat:no-repeat;
+   background-size:contain;
+   background-position:center;
   }
 
 .water {
@@ -28,7 +47,11 @@
    width: 100vw;
    height: 100vh;
    z-index: 300;
-}
+   background-repeat:no-repeat;
+   background-size:contain;
+   background-position:center;
+ }
+
  .header-mobile {
     display: none;
  }
@@ -56,9 +79,8 @@
 .top {
  position: relative;
  margin-bottom:0;
- padding: 0;
+ padding: 1rem;
  width: 100%;
- font-size: 2vw;
  z-index: 100;
  font-size: 7vw;
  text-align: center;
@@ -168,6 +190,10 @@
  color: #ffffff;
 }
 
+.top {
+ padding: 5rem;
+}
+  
 
 .grid-wrap {
  position: relative;
@@ -200,11 +226,11 @@
    
   .btn-see {
    font-size: 3vw; 
-   }
+  }
 
-   .desc {
-    font-size: 6vw;
-   }
+  .desc {
+   font-size: 6vw;
+  }
          
 }
 @media screen and (min-width: 768) and (max-width: 1024px) {
