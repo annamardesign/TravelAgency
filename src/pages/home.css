@@ -1,18 +1,11 @@
 
 
-body {
- overflow-x: hidden;
- position: relative;
-}
-
 .header-wrapper {
    overflow-x: hidden;
    width: 100vw;
 	height: 100vh;
    position: relative;
    top: 0;  
-   margin-left: auto;
-   margin-right: auto;
    background-repeat:no-repeat;
    background-size:contain;
    background-position:center;
@@ -164,31 +157,26 @@ body {
 
 @media screen and (max-width: 767px) {
 
-
 .water .mountain-back .mountain-front{
    display: none;
 }
 
 .header-mobile {
-   position: absolute;
-   top: 11vw;
-   left: 0;
+   overflow-x: hidden;
+   width: auto;
+	height: 100vh;
+   position: relative;
+   top: 0;  
+   margin-left: auto;
+   margin-right: auto;
    width: 100vw;
    height: 100vh;
    z-index: 10;
+   background-repeat:no-repeat;
+   background-size:contain;
+   background-position:center;
 }
 
-
- 
-.chamonie {
- position: absolute;
- left: -92vw;
- top: 220vw;
- font-size: 2vw;
- z-index: 16;
- font-size: 2.5vw;
- color: #ffffff;
-}
 
 .top {
  padding: 5rem;
