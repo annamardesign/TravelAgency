@@ -32,6 +32,11 @@ html, body {
 
 @media screen and (max-width: 767px) {
     
+
+    .select-container {
+       margin-top: 10vw;
+    }
+
     .select {
         width: 60vw;
         height: 8vw; 

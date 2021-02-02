@@ -56,29 +56,26 @@ form {
 
 .button-sign-in {
     margin-bottom: 1rem;
-    margin-left: 6vw;
-    width: 10vw;
+    width: 50vw;
     max-width: 50%;
     min-width: 10rem;
-    padding: 1rem 3rem;
-    outline: none;
-    height: 3.75rem;
-    border: none;
-    margin-right: 50%;
+    height: 3rem;
     border-radius: 4px;
     font-size: 1vw;
     color: #0E988A;
     cursor: pointer;
+    outline: none;
 }
+    
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     
     .offers {
         display: flex;
         flex-direction: column;
         padding: 0 1rem;
-        margin-left: 0;
+        margin-left: 1rem;
     }
     
     .form-wrap-sign-in {
