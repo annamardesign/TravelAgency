@@ -28,7 +28,7 @@ html, body {
   }
 
 .activity {
-    width: 320px;
+    width: 310px;
     height: 415px;
     background-color: #fff;
     border-radius: 5px;
@@ -78,7 +78,7 @@ html, body {
     float:left;
     font-size: 1.2vw;
     margin-left: 1rem;
-    margin-top: 4rem;
+    margin-top: 2rem;
     color: #0d6860;
     font-weight: 700;
 }
@@ -135,13 +135,20 @@ html, body {
 
 
 
-@media screen and (min-width: 768) and (max-width: 1366px) {
+@media screen and (min-width: 768px) and (max-width: 1366px) {
 
 .deals-container {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
+    grid-gap: 0.5rem;
  }
+
+ .activity-image {
+    height: 30vw;
 }
+
+}
+
 
 @media screen and (max-width: 767px) {
     
