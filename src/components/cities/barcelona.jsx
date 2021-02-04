@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import http from "../../services/httpService";
-import {MdExpandMore} from 'react-icons/md';
+import AddCard from './addcard.jsx';
 import './city.css';
 
 
@@ -10,8 +10,16 @@ const apiEndPoint = "/shopping/activities";
 
 class Barcelona extends Component {
         state = { 
-            deals: []
+            deals: [],
+            isClicked: false
          }
+
+        handleClick = () => {
+        const { currentState } = this.state.isClicked;
+        this.setState({ isClicked: !currentState });
+         }
+        
+  
           async componentDidMount() {
            this.setState({loading: true});
            const { data:deals } = await http.get(baseApiUrl + apiEndPoint, {
@@ -24,27 +32,16 @@ class Barcelona extends Component {
             let offersList = deals['data'];
             this.setState({ deals: offersList });
            }
+
+          
     
         render() { 
-    
+         const {deals, isClicked} = this.state
             return ( <React.Fragment>
               <div className="deals-container">
 
-              {this.state.deals.map(deal => (
-              <div className="activity-wrapper">
-              <div className="activity" key={deal.id}>
-                <div className="details">
-                  <div className="icon"><MdExpandMore/></div>
-                  <div className="activity-description" ><p className="more">{deal.shortDescription}</p></div>
-                </div>
-                 <div className="activity-img-wrap">
-                  <img className="activity-image" src={deal.pictures}/>
-                 </div>
-                 <div className="activity-price">{deal.price.amount} {deal.price.currencyCode} 
-                  <a className="activity-bookingLink" href={deal.bookingLink}>Book</a></div>
-                 <div className="activity-name">{deal.name}</div>
-            </div>
-            </div>))} 
+              {deals.map(deal => <AddCard isCardClicked={isClicked}  onClick = {this.handleCallback}  deal={deal}/>)}
+            
             </div>
     
             </React.Fragment> );

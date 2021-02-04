@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import http from "../services/httpService";
-import { setSelect } from '../redux_test/actions';
 import * as Cities from './cities';
 import './offers.css';
 
@@ -34,7 +31,7 @@ import './offers.css';
             <option value="Select your destination">Select your destination</option>
             <option value="Barcelona">Barcelona</option>
             <option value="Madrid">Madrid</option>
-            </select>
+          </select>
         </React.Fragment> );
     }
 
