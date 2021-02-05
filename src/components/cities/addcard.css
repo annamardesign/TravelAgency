@@ -38,13 +38,13 @@ html, body {
     box-shadow: 5px 20px 30px rgba(0,0,0,0.2);
 }
 .activity-image-wrap {
-    max-height: 60%;
+    max-height: 40%;
     width: auto;
     max-width: 250px;
 }
 
 .activity-image {
-    height: 20vw;
+    height: 15vw;
     object-fit: contain; 
 }
  

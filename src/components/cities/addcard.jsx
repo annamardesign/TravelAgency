@@ -1,26 +1,20 @@
 import React, {useState} from 'react';
 import {MdExpandMore} from 'react-icons/md';
 import {MdKeyboardArrowUp} from 'react-icons/md';
-import {VscClose} from 'react-icons/vsc';
 import './addcard.css';
 
 const AddCard = (props) => {
-  const [toggle, setToggle]= useState(false)
-    
-  const handleToggle = () => {
-    const { currentState } = toggle;
-    setToggle(!currentState);
-    }
+
 
     return  (
 
         <div className="activity-wrapper" >
-            <div className="activity" onClick={handleToggle} key={props.deal.id} deal={props.deal}>
-              <div className={toggle? "details-clicked" : "details"} >
-                <div className="icon" >{toggle? <MdKeyboardArrowUp/>:<MdExpandMore /> }</div>
-                <div className="closeModal"><VscClose onClick={handleToggle}/></div>
-                <div className= {toggle? "activity-description-clicked":"activity-description"}>
-                  {toggle? <p className="more">{props.deal.shortDescription}</p> : null}</div>
+            <div className="activity" onClick={() => 
+              props.handleClick(props.index)} toggled={props.toggled} key={props.deal.id} deal={props.deal}>
+              <div className={props.toggled? "details-clicked" : "details"} >
+                <div className="icon" >{props.toggled? <MdKeyboardArrowUp/>:<MdExpandMore /> }</div>
+                <div className= {props.toggled? "activity-description-clicked":"activity-description"}>
+                  {props.toggled? <p className="more">{props.deal.shortDescription}</p> : null}</div>
               </div>
                <div className="activity-img-wrap">
                 <img className="activity-image" src={props.deal.pictures}/>

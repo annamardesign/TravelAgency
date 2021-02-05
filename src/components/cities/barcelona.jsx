@@ -9,15 +9,20 @@ const apiEndPoint = "/shopping/activities";
 
 
 class Barcelona extends Component {
-        state = { 
-            deals: [],
-            isClicked: false
-         }
 
-        handleClick = () => {
-        const { currentState } = this.state.isClicked;
-        this.setState({ isClicked: !currentState });
+  constructor(props) {
+    super(props);
+       this.state = { 
+            deals: [],
+            toggleStatus: [false]
          }
+   }
+
+         handleClick(index) {
+          const newToggleStatus = [...this.state.toggleStatus]
+          newToggleStatus[index] = !this.state.toggleStatus[index]
+          this.setState({toggleStatus: newToggleStatus});
+      }
         
   
           async componentDidMount() {
@@ -36,17 +41,26 @@ class Barcelona extends Component {
           
     
         render() { 
-         const {deals, isClicked} = this.state
-            return ( <React.Fragment>
-              <div className="deals-container">
+         const {deals, toggleStatus} = this.state
+         return ( 
+         <React.Fragment>
+          <div className="deals-container">
 
-              {deals.map(deal => <AddCard isCardClicked={isClicked}  onClick = {this.handleCallback}  deal={deal}/>)}
-            
-            </div>
-    
-            </React.Fragment> );
-        }
+          {deals.map((deal, index) => 
+          <AddCard 
+           condition={this.state.toggled} 
+           key={index} 
+           index={index} 
+           toggled={toggleStatus[index]}  
+           handleClick = {this.handleClick.bind(this)}  
+           deal={deal}/>)}
+        
+        </div>
+
+        </React.Fragment> );
     }
+}
+ 
      
  
 export default Barcelona;
