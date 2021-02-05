@@ -44,7 +44,6 @@ class Madrid extends Component {
 
             {deals.map((deal, index) => 
             <AddCard 
-             condition={this.state.toggled} 
              key={index} 
              index={index} 
              toggled={toggleStatus[index]}  

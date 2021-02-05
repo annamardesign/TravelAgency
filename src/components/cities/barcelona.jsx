@@ -47,8 +47,7 @@ class Barcelona extends Component {
           <div className="deals-container">
 
           {deals.map((deal, index) => 
-          <AddCard 
-           condition={this.state.toggled} 
+          <AddCard  
            key={index} 
            index={index} 
            toggled={toggleStatus[index]}  
