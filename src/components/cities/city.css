@@ -11,4 +11,20 @@ html, body {
     grid-template-columns: 1fr 1fr 1fr;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+  .deals-container {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      gap: 0.3rem;
+  }
+}
+@media screen and (max-width: 767px) {
+    
+  .deals-container {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+  }
+}
+
 
