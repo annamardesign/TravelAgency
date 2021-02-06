@@ -108,12 +108,19 @@ form {
     }
 
     .button {
-        width: 100%;
-        min-width: 18.5rem;
+        margin-bottom: 1rem;
+        width: 50vw;
+        max-width: 50%;
+        min-width: 10rem;
+        border-radius: 4px;
+        font-size: 1vw;
+        color: #0E988A;
+        cursor: pointer;
+        outline: none;
+        margin-left: auto;
+        margin-right: auto;
         font-size: 3vw;
-        margin-left: 6vw;
     }
-
 }
 
 @media screen and (max-width: 400px) {
