@@ -54,17 +54,18 @@
 .find {
  position: relative;
  bottom: 45vh;
- left: 35vw;
+ left: 25vw; 
  flex: auto;
  z-index: 300;
  color: #ffffff;
  text-transform: uppercase;
  font-size: 1vw;
+
 }
 
 .find-arrow {
  position: absolute;
- left: 15vw;
+ left: 20vw;
  font-size: 4vw;
 }
 
@@ -75,7 +76,7 @@
  padding: 1rem;
  width: 100%;
  z-index: 100;
- font-size: 7vw;
+ font-size: 5vw;
  text-align: center;
  color: #ffffff; 
 }
@@ -85,8 +86,8 @@
  position: relative;
  width: 100vw;
  height: 100vh;
- padding-bottom: 10rem;
- margin: 8rem 0;
+ padding-bottom: 5rem;
+ margin: 0;
  display: grid;
  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
  grid-template-rows: auto;

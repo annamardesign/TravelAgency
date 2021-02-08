@@ -1,2 +1,0 @@
-export const CHANGE_SELECT = 'CHANGE_SELECT';
-export const ADD_DROPDOWN_VALUE = 'ADD_DROPDOWN_VALUE';
