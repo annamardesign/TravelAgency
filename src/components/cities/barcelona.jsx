@@ -47,7 +47,7 @@ class Barcelona extends Component {
           <div className="deals-container">
 
           {deals.map((deal, index) => 
-          <AddCard style={{'--i': index}}
+          <AddCard 
            key={index} 
            index={index} 
            toggled={toggleStatus[index]}  
