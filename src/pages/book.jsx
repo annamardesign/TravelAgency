@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Joi from 'joi-browser';
 import * as userService from '../services/userService';
 import './book.css';
-import Offers from '../components/offers.jsx';
+import SelectCity from '../components/selectCity.jsx';
 
 class Book extends Component {
     state = {
@@ -64,7 +64,7 @@ class Book extends Component {
         const { account } = this.state;
 
         return (<React.Fragment>
-            <Offers className="offers"/>
+            <SelectCity className="offers"/>
             <div className="email-sign-in">
                 <div className="email-container-sign-in">
                     <h1>Book your trip now</h1>

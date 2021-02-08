@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import * as Cities from './cities';
-import './offers.css';
+import './selectCity.css';
 
 
-  class Offers extends Component {
+  class SelectCity extends Component {
     state = { 
         selectedValue:""
     }
@@ -47,6 +47,6 @@ import './offers.css';
 }
  
  
-export default Offers;
+export default SelectCity;
 
 
