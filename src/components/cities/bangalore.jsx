@@ -1,14 +1,14 @@
+
 import React, { Component } from 'react';
 import http from "../../services/httpService";
 import AddCard from './addcard.jsx';
 import './city.css';
 
 
-const baseApiUrl = "https://test.api.amadeus.com/v1";
-const apiEndPoint = "/shopping/activities";
+const ApiUrl = "https://test.api.amadeus.com/v1/shopping/activities/by-square?north=13.023577&west=77.536856&south=12.923210&east=77.642256"
 
 
-class Barcelona extends Component {
+class Bangalore extends Component {
 
   constructor(props) {
     super(props);
@@ -27,13 +27,7 @@ class Barcelona extends Component {
   
           async componentDidMount() {
            this.setState({loading: true});
-           const { data:deals } = await http.get(baseApiUrl + apiEndPoint, {
-              params: {
-                latitude: 41.39715,
-                longitude: 2.160873,
-                radius: 1
-              }, 
-            })
+           const { data:deals } = await http.get(ApiUrl)
             let offersList = deals['data'];
             this.setState({ deals: offersList });
            }
@@ -62,6 +56,6 @@ class Barcelona extends Component {
  
      
  
-export default Barcelona;
+export default Bangalore;
 
 

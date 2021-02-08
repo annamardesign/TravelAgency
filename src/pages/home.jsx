@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import chamonie from '../images/chamonie.png';
 import lake from '../images/lake.png';
 import chamoniemobile from '../images/chamoniemobile.jpg';
-import { offersData } from '../services/offersData.js';
 import { BsChevronDoubleDown } from 'react-icons/bs';
+import Bangalore from '../components/cities/bangalore.jsx';
 import './home.css';
 
 const Home = () => {
@@ -15,13 +15,9 @@ const Home = () => {
     function handleScroll() {
       setOffset(window.pageYOffset)
     }
-   
-    
+  
     window.addEventListener("scroll",handleScroll );
 
-    function loadData() {
-      setOffers(offersData);
-    }
     return () => {
       window.removeEventListener("scroll", handleScroll)
     }
@@ -39,17 +35,11 @@ const Home = () => {
         
       </div>
         
-        <div className="find"><h1>Find your dream destination</h1><BsChevronDoubleDown className="find-arrow"/></div>
+        <div className="find"><h1>Find your dream tours and activities</h1><BsChevronDoubleDown className="find-arrow"/></div>
         
-        <h1 className="top" style={{transform: `translateX(${offset * -0.5}px)`}}> Top Destinations </h1>
+        <h1 className="top" style={{transform: `translateX(${offset * -0.5}px)`}}> City of the week </h1>
         <div className="grid-wrap">
-          {offersData.map( (offer, i) => 
-            (<div className="card" style={{'--i': i}}>
-              <h5 className="price">{offer.price}</h5>
-              <p className="desc">{offer.description}</p>
-              <a href={offer.url} className="btn-see">See itinerary</a>
-            </div>)
-            )}
+          <Bangalore/>
         </div>
         </React.Fragment>);
 }

@@ -21,6 +21,8 @@ html, body {
     box-shadow: 0;
     transform: scale(0.95);
     transition: box-shadow 0.5s, transform 0.5s;
+    animation: slide-left 3s both;
+    animation-delay: calc(var(--i) * 3s);
 }
 
 .activity-wrapper:hover {
@@ -36,6 +38,7 @@ html, body {
     overflow: hidden;
     margin: 1rem;
     box-shadow: 5px 20px 30px rgba(0,0,0,0.2);
+    
 }
 .activity-image-wrap {
     max-height: 40%;

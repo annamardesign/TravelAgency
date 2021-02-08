@@ -30,6 +30,7 @@ import './selectCity.css';
           <select className="select" onChange={(e) => this.setState({selectedValue: e.target.value})} >
             <option value="Select your destination">Select your destination</option>
             <option value="Barcelona">Barcelona</option>
+            <option value="Bangalore">Bangalore</option>
             <option value="Madrid">Madrid</option>
           </select>
         </React.Fragment> );
@@ -38,9 +39,9 @@ import './selectCity.css';
     renderSelectedCity() {
       const { selectedValue } = this.state
       if(!selectedValue) 
-      return <p className="select_dest_text">Select your destination</p>;
+       return <p className="select_dest_text">Select your destination</p>;
       const City = Cities[selectedValue];
-      return <City/>;
+       return <City/>;
     
     }
 

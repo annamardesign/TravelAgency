@@ -43,7 +43,7 @@ class Madrid extends Component {
             <div className="deals-container">
 
             {deals.map((deal, index) => 
-            <AddCard 
+            <AddCard style={{'--i': index}}
              key={index} 
              index={index} 
              toggled={toggleStatus[index]}  
