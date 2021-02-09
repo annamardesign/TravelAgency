@@ -5,6 +5,10 @@ import './addcard.css';
 
 const AddCard = (props) => {
 
+  const openInNewTab = (url) => {
+    const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+    if (newWindow) newWindow.opener = null
+  }
 
     return  (
 
@@ -20,7 +24,7 @@ const AddCard = (props) => {
                 <img className="activity-image" src={props.deal.pictures}/>
                </div>
                <div className="activity-price">{props.deal.price.amount} {props.deal.price.currencyCode} 
-                <a className="activity-bookingLink" href={props.deal.bookingLink}>Book</a></div>
+                <a className="activity-bookingLink" onClick={() => openInNewTab(`${props.deal.bookingLink}`)}>Book</a></div>
                <div className="activity-name">{props.deal.name}</div>
           </div>
         </div>
