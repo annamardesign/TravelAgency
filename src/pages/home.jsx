@@ -4,14 +4,14 @@ import chamonie from '../images/chamonie.png';
 import lake from '../images/lake.png';
 import chamoniemobile from '../images/chamoniemobile.jpg';
 import { BsChevronDoubleDown } from 'react-icons/bs';
-import { posts, updatePosts } from '../redux/reducers.js';
+import Post from './post.jsx';
 import { connect } from 'react-redux';
 import './home.css';
 
 
-const Home = ({ posts, updatePosts }) => {
+const Home = ({ updatedPosts }) => {
   const [offset, setOffset] = useState(0);
-  
+  const [toggleStatus, setToggleStatus] = useState([false]);
 
   useEffect(() => {
     
@@ -25,6 +25,12 @@ const Home = ({ posts, updatePosts }) => {
       window.removeEventListener("scroll", handleScroll)
     }
     });
+
+    function handleClick(index) {
+      const newToggleStatus = [...toggleStatus]
+      newToggleStatus[index] = !toggleStatus[index]
+      setToggleStatus(newToggleStatus);
+    };
 
    
 
@@ -44,10 +50,18 @@ const Home = ({ posts, updatePosts }) => {
         
         <h1 className="top" style={{transform: `translateX(${offset * -0.5}px)`}}> City of the week </h1>
         <div className="grid-wrap">
-          {posts}
-        </div>
+
+          {updatedPosts.map(post => <Post post={post} 
+           key={post.index} 
+           index={post.index} 
+           toggled={toggleStatus[post.index]}  
+           handleClick = {handleClick}  
+           />)}
+           
+        </div> 
         </React.Fragment>);
-}
+ }
+
 
  Home.propTypes = {
   posts: PropTypes.array.isRequired,
@@ -55,7 +69,7 @@ const Home = ({ posts, updatePosts }) => {
  };
 
 function mapStateToProps(state) {
-  return { updatePosts: state.updatePosts };
+  return { updatedPosts: state.updatedPosts };
 }
  
 export default connect(mapStateToProps)(Home);

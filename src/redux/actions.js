@@ -3,7 +3,7 @@ import http from '../services/httpService.js';
 
 const fetchPostsSuccess = posts => ({
     type: 'FETCH_POSTS_SUCCESS',
-    payload: { posts }
+    payload: [ posts ]
 })
 
 export const fetchPosts =  () => {
