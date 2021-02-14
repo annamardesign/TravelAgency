@@ -17,17 +17,17 @@ const Navbar = () => {
         </div>
           <div className="menu-icon" onClick={handleClick}>{click ? <FaTimes /> : <FaBars />}</div>
            <div className={click? 'nav-menu-active' : 'nav-menu'}>
-            <ul className="left">
-             <li><NavLink to="/home" className="home" onClick={closeMobileMenu}>Home</NavLink></li>
-             <li><NavLink to="/explore" className="explore" onClick={closeMobileMenu}>Explore</NavLink></li>
-            </ul>
-            <ul className="center">
+            <div className="left">
+             <NavLink exact activeClassName="active" to="/home" className="navli" onClick={closeMobileMenu}>Home</NavLink>
+             <NavLink exact activeClassName="active"to="/explore" className="navli"  onClick={closeMobileMenu}>Explore</NavLink>
+            </div>
+            <div className="center" onClick={handleClick}>
              <li><NavLink to="/home" className="logo" onClick={closeMobileMenu}><Logo/></NavLink></li>
-            </ul>
-            <ul className="right">
-             <li><NavLink to="/signup" className="signup" onClick={closeMobileMenu}>Sign up</NavLink></li>
-             <li><NavLink to="/book" className="book" onClick={closeMobileMenu}>Book</NavLink></li>
-            </ul>
+            </div>
+            <div className="right">
+             <NavLink exact activeClassName="active" to="/signup"  className="navli" onClick={closeMobileMenu}>Sign up</NavLink>
+             <NavLink exact activeClassName="active" to="/book"  className="navli"  onClick={closeMobileMenu}>Book</NavLink>
+            </div>
          </div>
         </nav>
     </React.Fragment> );
