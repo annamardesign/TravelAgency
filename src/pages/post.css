@@ -85,6 +85,7 @@ html, body {
     padding: 0 35px; 
     z-index: 2000;
     position: absolute;
+    background-color: #0d6860;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -98,11 +99,14 @@ html, body {
 
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
+    
+    .post-price {
+        font-size: 2.4vw;
+    }
+    .post-name {
+        font-size: 2.2vw;
+    }
 
- .post-image {
-    height: 30vw;
- }
- 
 }
 
 
@@ -112,11 +116,7 @@ html, body {
         font-size: 3.4vw;
     }
     .post-name {
-        font-size: 2.2vw;
-    }
-
-    .post-image {
-        height: 55vw;
+        font-size: 3.2vw;
     }
     
 }
