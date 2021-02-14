@@ -5,10 +5,10 @@
 body {
     padding:0;
     margin:0;
-    background-color:#2F303A;
+    background-color:#c1c5c4;
     font-family: Poppins, sans-serif;
     font-size: 1.2rem;
-    color:white;
+    color:#fff;
     min-height: 100vh;
     overflow-x:hidden; 
 }

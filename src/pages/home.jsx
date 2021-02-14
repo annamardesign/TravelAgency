@@ -11,7 +11,7 @@ import './home.css';
 
 const Home = ({ updatedPosts }) => {
   const [offset, setOffset] = useState(0);
-  const [toggleStatus, setToggleStatus] = useState([false]);
+
 
   useEffect(() => {
     
@@ -26,13 +26,7 @@ const Home = ({ updatedPosts }) => {
     }
     });
 
-    function handleClick(index) {
-      const newToggleStatus = [...toggleStatus]
-      newToggleStatus[index] = !toggleStatus[index]
-      setToggleStatus(newToggleStatus);
-    };
 
-   
 
     return (<React.Fragment>
       <div className="header-wrapper">
@@ -47,18 +41,17 @@ const Home = ({ updatedPosts }) => {
       </div>
         
         <div className="find"><h1>Find your dream tours and activities</h1><BsChevronDoubleDown className="find-arrow"/></div>
-        
+      <div className= "hero">
         <h1 className="top" style={{transform: `translateX(${offset * -0.5}px)`}}> City of the week </h1>
         <div className="grid-wrap">
 
           {updatedPosts.map(post => <Post post={post} 
            key={post.index} 
-           index={post.index} 
-           toggled={toggleStatus[post.index]}  
-           handleClick = {handleClick}  
+           index={post.index}  
            />)}
            
         </div> 
+      </div>
         </React.Fragment>);
  }
 

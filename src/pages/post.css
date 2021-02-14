@@ -1,205 +1,122 @@
 
 html, body {
-    background: #c1c5c4;
+    background: #fff;
     font-family: sans-serif;
   }
 
 
-.deals-container {
-    margin-top: 10vw;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-
-.activity-wrapper {
+.post-wrapper {
     margin: auto;
     position: relative;
     overflow: hidden;
-    background: #fff;
-    border-radius: 10px;
+    background-color: #fff;
+    border-radius: 50%;
     box-shadow: 0;
     transform: scale(0.95);
     transition: box-shadow 0.5s, transform 0.5s;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    text-align: center;
+    border-radius: 50%;
 }
 
-.activity-wrapper:hover {
+.post-wrapper:hover {
     transform: scale(1);
     box-shadow: 5px 20px 30px rgba(0,0,0,0.2);
   }
 
-.activity {
+.post {
     width: 310px;
-    height: 415px;
+    height: 310px;
+    text-align: center;
     background-color: #fff;
-    border-radius: 5px;
     overflow: hidden;
     margin: 1rem;
+    line-height: 310px;
     box-shadow: 5px 20px 30px rgba(0,0,0,0.2);
-    
+    border-radius: 50%;
 }
-.activity-image-wrap {
-    max-height: 40%;
-    width: auto;
-    max-width: 250px;
-}
+.post-image-wrap {
+    position: relative;
+    width: 310px;
+    height: 310px;
+    overflow: hidden;
+    border-radius: 50%;
+    font-size: 30px;
+    line-height: 310px;
+    text-align: center;
+} 
 
-.activity-image {
-    height: 15vw;
-    width: 100%;
-    object-fit: contain; 
+.post-image {
+    margin: 0 auto;
+    margin-left: -5%; 
+    height: 100%;
+    width: auto;
+    z-index: 10;
 }
  
-.activity-bookingLink {
+.post-bookingLink {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
     text-decoration: none;
     text-align: center;
-    color: #fff;
-    padding: 0.5em 1em;
-    border-radius: 4px;
-    background-color: #0E988A;
-    float:right;
-    width: calc(30% - 2px);
+    width: calc(80% - 2px);
     height:100%;
-    margin-right: 1rem;
-    margin-top: -0.2rem;
+    z-index: 1000;
+    cursor: pointer;
 }
-.activity-bookingLink:hover {
-    background-color: #0d6860;
+.post-bookingLink:hover {
     transform: translateY(5px);
 }
-.activity-price {
+.post-price {
     color: #0d6860;
     margin-left: 1rem;
     margin-top: 1rem;
     font-size: 1.2vw;
 }
-.activity-name {
-    margin: 0.7rem auto;
-    padding: 0;
-    width: 50%;
-    position:relative;
-    float:left;
-    font-size: 1.2vw;
-    margin-left: 1rem;
-    margin-top: 1rem;
-    color: #0d6860;
-    font-weight: 700;
-}
-.details  {
-    z-index: 10;
-    background: #0E988A;
-    width: 140px;
-    height: 140px;
+.post-name {
+    display: inline-block; 
+    line-height: normal;
+    padding: 0 35px; 
+    z-index: 2000;
     position: absolute;
-    top: -70px;
-    right: -70px;
-    border-radius: 200px;
-    transition: all 0.5s, border-radius 2s, top 1s;
-    overflow: hidden;
-    cursor: pointer;
-}
-
-
-
-.details-clicked {
-    z-index: 10;
-    background: #0E988A;
-    width: 140px;
-    height: 100%;
-    position: absolute;
-    transition: all 0.5s, border-radius 2s, top 1s;
-    overflow: hidden;
-    cursor: pointer;
-    width:100%;
-    right:0;
-    top:0;
-    border-radius: 0;
-    font-size: 2vw;
-}
-.icon {
-    position:absolute;
-    right:85px;
-    top:85px;
-    color:white;
-    opacity: 1;
-    font-size: 2vw;
-}
-
-
-.activity-description {
-    position: relative;
-    width: 80%;
-    height: 100%;
-    right: 5px;
-    top: 135px;
-    padding: 0;
-    margin-right: 2rem;
-    margin-left: 2rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     font-size: 1vw;
-    opacity: 0;
+    width: 100%;
     color: #fff;
-    z-index: 620;
-    transform: scale(0.5);
-    transform: translateY(-100%);
-    transition: opacity 0.2s, transform 0.8s;
 }
-.activity-description-clicked {
-    position: relative;
-    width: 80%;
-    height: 100%;
-    right: 5px;
-    top:6rem;
-    padding: 0;
-    margin-right: 2rem;
-    margin-left: 2rem;
-    font-size: 0.8vw;
-    opacity: 0;
-    color: #fff;
-    z-index: 620;
-    transition: opacity 0.2s, transform 0.8s;
-    opacity: 1;
-    transform: scale(1);
-    transform: translateY(0);
-    text-align: left;
- }
 
- .more {
-     padding-bottom: 3rem;
- }
+
 
 
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
 
- .activity-image {
+ .post-image {
     height: 30vw;
  }
- .activity-description-clicked {
-    font-size: 2vw;
-}
- .icon {
-    font-size: 3vw;
- }
+ 
 }
 
 
 @media screen and (max-width: 767px) {
     
-    .activity-price {
+    .post-price {
         font-size: 3.4vw;
     }
-    .activity-name {
+    .post-name {
         font-size: 2.2vw;
     }
 
-    .activity-image {
+    .post-image {
         height: 55vw;
     }
-    .activity-description-clicked {
-        font-size: 3vw;
-    }
-    .icon {
-        font-size: 4vw;
-     }
     
 }
