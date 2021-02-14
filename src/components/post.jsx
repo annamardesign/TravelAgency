@@ -1,6 +1,4 @@
-import React, {useState} from 'react';
-import {MdExpandMore} from 'react-icons/md';
-import {MdKeyboardArrowUp} from 'react-icons/md';
+import React from 'react';
 import './post.css';
 
 const Post = (props) => {
@@ -14,12 +12,6 @@ const Post = (props) => {
 
         <div className="post-wrapper" >
             <div className="post"  key={props.post.id} deal={props.post}>
-              {/* <div className={props.toggled? "details-clicked" : "details"} >
-                <div className="icon" >{props.toggled? <MdKeyboardArrowUp/>:<MdExpandMore /> }</div>
-                <div className= {props.toggled? "post-description-clicked":"post-description"}>
-                  {props.toggled? <p className="more">{props.post.shortDescription}</p> : null}</div>
-              </div> */}
-              
                <div className="post-image-wrap">
                 <img className="post-image" src={props.post.pictures}/>
                 <a className="post-bookingLink" onClick={() => openInNewTab(`${props.post.bookingLink}`)}>

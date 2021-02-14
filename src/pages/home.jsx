@@ -4,7 +4,7 @@ import chamonie from '../images/chamonie.png';
 import lake from '../images/lake.png';
 import chamoniemobile from '../images/chamoniemobile.jpg';
 import { BsChevronDoubleDown } from 'react-icons/bs';
-import Post from './post.jsx';
+import Post from '../components/post.jsx';
 import { connect } from 'react-redux';
 import './home.css';
 
