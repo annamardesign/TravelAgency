@@ -4,7 +4,6 @@ import "./post.css";
 const Post = (props) => {
   const openInNewTab = (url) => {
     const newWindow = window.open(url, "_blank", "noopener,noreferrer");
-    if (newWindow) newWindow.opener = null;
   };
 
   return (
@@ -16,8 +15,7 @@ const Post = (props) => {
             alt="post image"
             src={props.post.pictures}
           />
-          <a
-            href={props.post.bookingLink}
+          <button
             className="post-bookingLink"
             onClick={() => openInNewTab(`${props.post.bookingLink}`)}
           >
@@ -28,7 +26,7 @@ const Post = (props) => {
                 {props.post.price.amount} {props.post.price.currencyCode}
               </span>{" "}
             </p>
-          </a>
+          </button>
         </div>
         <span className="post-price">
           {props.post.price.amount} {props.post.price.currencyCode}

@@ -43,13 +43,12 @@ const AddCard = (props) => {
         </div>
         <div className="activity-price">
           {props.deal.price.amount} {props.deal.price.currencyCode}
-          <a
-            href={props.deal.bookingLink}
+          <button
             className="activity-bookingLink"
             onClick={() => openInNewTab(`${props.deal.bookingLink}`)}
           >
             Book
-          </a>
+          </button>
         </div>
         <div className="activity-name">{props.deal.name}</div>
       </div>
