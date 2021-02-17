@@ -1,33 +1,33 @@
 .nav-menu {
- display: flex;
- position: fixed;
- top: 0;
- left: 0;
- width: 100vw;
- height: 8vw;
- z-index: 500;
- padding: 0.75rem 2rem;
- background: #c1c5c4;
- background-size:contain;
- background-position:center;
- justify-content: space-between;
- align-items: center;
- overflow: hidden;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 8vw;
+  z-index: 500;
+  padding: 0.75rem 2rem;
+  background: #c1c5c4;
+  background-size: contain;
+  background-position: center;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
 }
 
 .right {
-right: 0;
-margin-right: 6rem;
+  right: 0;
+  margin-right: 6rem;
 }
 
 .center {
-padding: 0;
-margin: 0 auto;
-max-width: 40%;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 40%;
 }
 
 .logo a {
-padding: 0;
+  padding: 0;
 }
 
 .navbar div {
@@ -35,34 +35,33 @@ padding: 0;
   text-align: center;
 }
 
-.navbar .navli{
+.navbar .navli {
   display: inline-block;
 }
 
 .navli {
- display: block;
- position: relative;
- color: #5f7078;
- text-decoration: none;
- padding: 1rem 0;
- margin: 0 1rem;
- font-size: 1rem;
- font-weight: 600;
- z-index: 1;
- text-transform: uppercase;
+  display: block;
+  position: relative;
+  color: #5f7078;
+  text-decoration: none;
+  padding: 1rem 0;
+  margin: 0 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  z-index: 1;
+  text-transform: uppercase;
 }
 
 .active {
-  color:#0E988A;
- }
+  color: #0e988a;
+}
 .menu-icon {
   display: none;
 }
 
 .mobile-container {
- display: none;
+  display: none;
 }
-
 
 @media screen and (min-width: 768) and (max-width: 1366px) {
   .nav-menu {
@@ -79,10 +78,9 @@ padding: 0;
     overflow: hidden;
     margin-left: 2rem;
     margin-right: 2rem;
-   }
-   
-   
-   .navli {
+  }
+
+  .navli {
     display: block;
     position: relative;
     color: #5f7078;
@@ -93,59 +91,54 @@ padding: 0;
     font-weight: 600;
     z-index: 1;
     text-transform: uppercase;
-   }
+  }
 
-   .active {
-    color:#0E988A;
-   }
+  .active {
+    color: #0e988a;
+  }
 
-   
-   .navbar div {
+  .navbar div {
     list-style: none;
     text-align: center;
-   }
-   
-   .navbar .navli{
-    display: inline-block;
-   }
-   
-   .menu-icon {
-    display: none;
-   }
-   
-   .mobile-container {
-    display: none;
-   }
+  }
 
-  
+  .navbar .navli {
+    display: inline-block;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+
+  .mobile-container {
+    display: none;
+  }
 }
 
-
 @media screen and (max-width: 767px) {
+  .mobile-container {
+    position: absolute;
+    top: 0;
+    justify-self: start;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    background-color: #c1c5c4;
+    z-index: 500;
+  }
 
- .mobile-container {
-  position: absolute;
-  top: 0;
-  justify-self: start;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 2rem;
-  display: flex;
-  align-items: center;
-  background-color:#c1c5c4;
-  z-index: 500;
- }
-
- .menu-icon {
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  transform: translate(-100%, 60%);
-  font-size: 1.8rem;
-  cursor: pointer;
-  color: #ffffff;
-  z-index: 601;
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 60%);
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #ffffff;
+    z-index: 601;
   }
 
   .logo a {
@@ -161,7 +154,7 @@ padding: 0;
     position: relative;
     height: 80vh;
     overflow: hidden;
-    background: #0E988A;
+    background: #0e988a;
     border-radius: 10px;
     box-shadow: 0;
     opacity: 0;
@@ -170,7 +163,6 @@ padding: 0;
     transition: box-shadow 0.5s, transform 0.5s;
     z-index: 600;
   }
-
 
   .nav-menu-active .navli {
     display: block;
@@ -190,7 +182,7 @@ padding: 0;
     margin-right: 5rem;
     margin-top: 5rem;
     margin-bottom: 1.5rem;
-   }
+  }
 
   .right {
     margin-right: 5rem;
@@ -199,14 +191,14 @@ padding: 0;
   }
 
   .navli:hover {
-    color:#ffffff;
-   }
-   
-   .active {
-    color:#ffffff;
-   }
+    color: #ffffff;
+  }
 
-   @keyframes appear {
+  .active {
+    color: #ffffff;
+  }
+
+  @keyframes appear {
     0% {
       opacity: 0;
     }
@@ -223,14 +215,4 @@ padding: 0;
       transform: translateX(0);
     }
   }
-
 }
-  
-
-
-
-
-
-
-    
-
