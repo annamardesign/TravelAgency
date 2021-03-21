@@ -39,7 +39,7 @@ class SelectCity extends Component {
 
   renderSelectedCity() {
     const { selectedValue } = this.state;
-    if (!selectedValue)
+    if (!selectedValue || selectedValue == "Select your destination")
       return <p className="select_dest_text">Select your destination</p>;
     const City = Cities[selectedValue];
     return <City />;
