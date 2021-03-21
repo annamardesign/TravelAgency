@@ -13,9 +13,7 @@ const Navbar = () => {
     <React.Fragment>
       <nav className="navbar">
         <div className="mobile-container">
-          <NavLink to="/home">
-            <Logo />
-          </NavLink>
+          <Logo />
         </div>
         <div className="menu-icon" onClick={handleClick}>
           {click ? <FaTimes /> : <FaBars />}
@@ -41,11 +39,9 @@ const Navbar = () => {
               Explore
             </NavLink>
           </div>
-          <div className="center" onClick={handleClick}>
+          <div className="center">
             <li>
-              <NavLink to="/home" className="logo" onClick={closeMobileMenu}>
-                <Logo />
-              </NavLink>
+              <Logo />
             </li>
           </div>
           <div className="right">
